@@ -1,0 +1,51 @@
+.block {
+    width: 660px;
+    height: 60px;
+    background-color: #404040;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    box-shadow: 0px 0px 10px #00000090;
+}
+
+.avatarImage {
+    cursor: pointer;
+}
+
+.Icons {
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Icons img {
+    cursor: pointer;
+    transition: 0.2s all;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    -o-transition: 0.2s all;
+}
+.Icons img:hover {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+}
+
+.block input {
+    width: 450px;
+    color: #ffffffc0;
+    font-size: 16px;
+}
+
+.block input::placeholder {
+    color: #ffffff73;
+}

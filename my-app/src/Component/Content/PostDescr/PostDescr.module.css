@@ -1,0 +1,7 @@
+.block {
+    width: 600px;
+    margin-top: 15px;
+    max-height: 75px;
+    padding: 4px 0px;
+    word-wrap: break-word;
+}

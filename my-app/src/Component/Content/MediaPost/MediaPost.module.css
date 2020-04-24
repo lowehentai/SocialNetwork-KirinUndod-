@@ -1,0 +1,10 @@
+.block {
+    width: 600px;
+    max-height: 310px;
+    padding: 4px 0px;
+}
+
+.block img {
+    max-width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.287);
+}

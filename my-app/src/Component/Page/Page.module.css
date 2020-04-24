@@ -1,0 +1,10 @@
+.Page {
+    margin-top: 15px;
+}
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
