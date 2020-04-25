@@ -33,7 +33,7 @@ const Page = (props) => {
                             {HomeComponentMap}
                         </Route>
                         <Route path='/message'>
-                            <MessageComponent />
+                            <MessageComponent Info={props.Info.MessagesBlock.Users} />
                         </Route>
                     </div>
                     <div className={PageStyle.Right}>

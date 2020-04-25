@@ -1,7 +1,7 @@
 let state = {
     Dat_Users: {
         Dat_Information: [
-            { id: 1, name: 'Hentai Hentaiovic', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKvJ4WBzDoGvdtRkIGUyde9fC0DTcIDMQ2RlOm5YUqM3Vr8ojX&usqp=CAU' }
+            { id: 1, name: 'Hentai Hentaiovic', avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU' }
         ]
     },
     Dat_QuickAccess: {
@@ -29,11 +29,23 @@ let state = {
     },
     Dat_Message: {
         Dat_MessageType: [
-            { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'message/qwe', name: 'All Message' },
-            { id: 2, image: '../../All_Icons/Vectorhome.png', url: 'message/asd', name: 'Unread' },
-            { id: 3, image: '../../All_Icons/Vectorhome.png', url: 'message/zxc', name: 'Important' }
+            { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'message/allmessage', name: 'All Message' },
+            { id: 2, image: '../../All_Icons/Vectorhome.png', url: 'message/unread', name: 'Unread' },
+            { id: 3, image: '../../All_Icons/Vectorhome.png', url: 'message/important', name: 'Important' }
+        ]
+    },
+    //user chat
+    MessagesBlock: {
+        Users: [
+            { id: 1, image: '', url: '', name: 'Hentai' },
+            { id: 2, image: '', url: '', name: 'Ecchi' },
+            { id: 3, image: '', url: '', name: 'Vladimir' },
+            { id: 4, image: '', url: '', name: 'Undod' },
+            { id: 5, image: '', url: '', name: 'NoN' },
+            { id: 6, image: '', url: '', name: 'Skritiy' }
         ]
     }
 }
+
 
 export default state;

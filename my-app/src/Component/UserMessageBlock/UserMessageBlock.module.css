@@ -1,0 +1,25 @@
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff59;
+    padding: 15px 0px 15px 0px;
+}
+
+.text_wrapper {
+    width: 450px;
+    color: #ffffff;
+}
+
+.LastMessage {
+    color: #ffffff57;
+}
+
+.TimeLastMessage {
+    color: #ffffff57;
+    height: 60px;
+}
+
+.img {
+    width: 65px;
+}
