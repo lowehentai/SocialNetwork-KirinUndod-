@@ -26,7 +26,7 @@ const Page = (props) => {
                     </div>
                     <div className={PageStyle.Center}>
                         <Route path='/main'>
-                            <CommentInput />
+                            <CommentInput addPost={props.addPost} />
                             {ContentMap}
                         </Route>
                         <Route path='/home'>
@@ -44,7 +44,7 @@ const Page = (props) => {
                             {HomeUsersComponentMap}
                         </Route>
                         <Route path='/message'>
-                            <MessageTypeBlock Info={props.Info.Dat_Message.Dat_MessageType}/>
+                            <MessageTypeBlock Info={props.Info.Dat_Message.Dat_MessageType} />
                         </Route>
                     </div>
                 </div>

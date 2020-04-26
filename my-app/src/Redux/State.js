@@ -48,4 +48,16 @@ let state = {
 }
 
 
+export let addPost = (postMessage) => {
+    let newPost = {
+        name: 'asdfasdf',
+        id: 7,
+        descr: postMessage,
+        like: 1,
+        message: 12
+    };
+    state.Dat_MediaMenu.Dat_UsersInfo.push(newPost);
+}
+
+
 export default state;
