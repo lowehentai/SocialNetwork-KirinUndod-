@@ -8,7 +8,6 @@ import MessageTypePuncts from './MessageTypePuncts/MessageTypePuncts.js';
 
 const MessageTypeBlock = (props) => {
     let puncts = props.Info.map(el => <MessageTypePuncts url={el.url} name={el.name} image={el.image} />);
-
     return (
         <div calssName={MessageTypeBlockStyle.MessageTypeBlock}>
             <div className={MessageTypeBlockStyle.block}>

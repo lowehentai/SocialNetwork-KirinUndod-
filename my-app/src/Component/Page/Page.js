@@ -14,8 +14,8 @@ import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 
 const Page = (props) => {
-    let ContentMap = props.Info.Dat_MediaMenu.Dat_UsersInfo.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} />),
-        HomeComponentMap = props.Info.Dat_Users.Dat_Information.map(el => <HomeComponent img={el.avatar} />),
+    let ContentMap = props.Info.Dat_MediaMenu.Dat_UsersInfo.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
+        HomeComponentMap = props.Info.Dat_Users.Dat_Information.map(el => <HomeComponent avatarImg={el.avatarImg} />),
         HomeUsersComponentMap = props.Info.Dat_Users.Dat_Information.map(el => <HomeUsersComponent name={el.name} />);
     return (
         <Router>
@@ -26,7 +26,7 @@ const Page = (props) => {
                     </div>
                     <div className={PageStyle.Center}>
                         <Route path='/main'>
-                            <CommentInput addPost={props.addPost} />
+                            <CommentInput addPost={props.addPost} TestingU={props.Info.Dat_Users.TestingU} updateNewPostText={props.updateNewPostText}/>
                             {ContentMap}
                         </Route>
                         <Route path='/home'>

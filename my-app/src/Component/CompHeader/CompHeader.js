@@ -2,7 +2,11 @@ import React from 'react';
 //Style Import 
 import HeaderStyle from './CompHeader.module.css';
 
-function CompHeader() {
+function CompHeader(props) {
+    let myName = props.Info.map(element => [element.name]),
+        myAvatar = props.Info.map(element => [element.avatarImg]),
+        Status = props.Info.map(element => [element.status]),
+        ExtraStatus = props.Info.map(element => [element.extraStatus]);
     return (
         <div className={HeaderStyle.Header}>
             <div className={HeaderStyle.container}>
@@ -20,9 +24,19 @@ function CompHeader() {
                         </button>
                     </div>
                     <div className={HeaderStyle.users}>
-                        <div className={HeaderStyle.users_name}>Name</div>
+                        <div className={HeaderStyle.users_name}>
+                            {myName}
+                            <div className={HeaderStyle.Privilege}>
+                                <span className={HeaderStyle.Status}>
+                                    {Status}
+                                </span>
+                                <span className={HeaderStyle.ExtraStatus}>
+                                    {ExtraStatus}
+                                </span>
+                            </div>
+                        </div>
                         <div className={HeaderStyle.users_avatar}>
-                            <img src={require('../All_Icons/Vectoravatar.png')}></img>
+                            <img src={myAvatar}></img>
                         </div>
                     </div>
                 </div>

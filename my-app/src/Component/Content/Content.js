@@ -12,10 +12,7 @@ const Content = (props) => {
         <div className={ContentStyle.Content}>
             <div className={ContentStyle.block}>
                 <div className={ContentStyle.PostUsersInfo}>
-                    <PostUsersInfo UsersName={props.name} />
-                    <span className={ContentStyle.TimePost}>
-                        {/* time selecteded function */}
-                    </span>
+                    <PostUsersInfo UsersName={props.name} Time={props.Time} avatarImg={props.avatarImg} />
                 </div>
                 <div className={ContentStyle.PostDescr}>
                     <PostDescr UsersDescr={props.descr} />

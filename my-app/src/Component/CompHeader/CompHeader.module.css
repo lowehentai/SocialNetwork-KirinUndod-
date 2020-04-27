@@ -57,7 +57,7 @@ input::placeholder {
 }
 
 .buttons {
-    width: 450px;
+    width: 400px;
 }
 
 .button {
@@ -80,22 +80,52 @@ input::placeholder {
 }
 
 .users {
-    width: 100px;
+    max-width: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
 }
 
+.users img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    object-fit: cover;
+}
+
 .users_name {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin: 0px 10px 0px 0px;
 }
 
 .version {
     color: #fff;
     margin-left: 5px;
     font-size: 11px;
+}
+
+.Privilege {
+    max-width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Status {
+    font-size: 12px;
+    color: #1eff00;
+    text-shadow: 0px 0px 10px #1eff00;
+}
+
+.ExtraStatus {
+    font-size: 12px;
+    color: #ff0000;
+    text-shadow: 0px 0px 10px #ff0000;
 }
