@@ -12,6 +12,7 @@ import HomeComponent from '../HomeComponent/HomeComponent.js';
 import HomeUsersComponent from '../HomeUsersComponent/HomeUsersComponent.js';
 import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
+import Dialogs from '../Dialogs/Dialogs.js';
 
 const Page = (props) => {
     let ContentMap = props.Info.Dat_MediaMenu.Dat_UsersInfo.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
@@ -26,14 +27,17 @@ const Page = (props) => {
                     </div>
                     <div className={PageStyle.Center}>
                         <Route path='/main'>
-                            <CommentInput addPost={props.addPost} TestingU={props.Info.Dat_Users.TestingU} updateNewPostText={props.updateNewPostText}/>
+                            <CommentInput Info={props.Info.Dat_Users} dispatch={props.dispatch} />
                             {ContentMap}
                         </Route>
                         <Route path='/home'>
                             {HomeComponentMap}
                         </Route>
-                        <Route path='/message'>
+                        <Route exact path='/message'>
                             <MessageComponent Info={props.Info.MessagesBlock.Users} />
+                        </Route>
+                        <Route path='/message/1'>
+                            <Dialogs Info={props.Info.MessagesBlock} dispatch={props.dispatch}/>
                         </Route>
                     </div>
                     <div className={PageStyle.Right}>

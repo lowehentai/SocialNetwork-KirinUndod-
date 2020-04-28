@@ -1,18 +1,20 @@
 import React from 'react';
 //Style Module Import
 import CommentInputStyle from './CommentInput.module.css';
+//Utility Import 
+import { addPostCreatorAction, updateNewPostTextCreatorAction } from '../../Redux/State.js';
 
 const CommentInput = (props) => {
     let newPostElemnt = React.createRef();
 
     let addPost = () => {
         let text = newPostElemnt.current.value;
-        props.addPost(text);
+        props.dispatch(addPostCreatorAction(text));
     }
 
     let onPostChange = () => {
         let text = newPostElemnt.current.value;
-        props.updateNewPostText(text);
+        props.dispatch(updateNewPostTextCreatorAction(text));
     }
 
     return (
@@ -24,7 +26,7 @@ const CommentInput = (props) => {
                 {/* method="POST" */}
                 <div>
                     <div className={CommentInputStyle.form}>
-                        <input onChange={onPostChange} value={props.TestingU} ref={newPostElemnt} type="text" maxLength="450" placeholder="What's New?" className={CommentInputStyle.input}></input>
+                        <input onChange={onPostChange} value={props.Info.TestingU} ref={newPostElemnt} type="text" maxLength="450" placeholder="What's New?" className={CommentInputStyle.input}></input>
                         <button onClick={addPost} className={CommentInputStyle.SendButton}>
                             <img src={require('../All_Icons/.fas.fa-location-arrowsend.png')} className={CommentInputStyle.sendImg}></img>
                         </button>

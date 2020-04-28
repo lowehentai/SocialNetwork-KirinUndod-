@@ -1,0 +1,32 @@
+.messageBlock {
+    width: 100%;
+    max-height: 220px;
+    color: #cfcfcf;
+    margin: 20px 0px;
+}
+
+.UsersInfo {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ImgNameWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.Name {
+    margin-left: 15px;
+    color: #cccccc;
+    font-weight: 500;
+}
+
+.lastMessageTime {
+    color: #858585;
+    font-size: 14px;
+}
+
+.Description {
+    margin: 10px;
+}

@@ -120,8 +120,8 @@ input::placeholder {
 
 .Status {
     font-size: 12px;
-    color: #1eff00;
-    text-shadow: 0px 0px 10px #1eff00;
+    color: #00ff00;
+    text-shadow: 0px 0px 15px #00ff00;
 }
 
 .ExtraStatus {

@@ -23,3 +23,7 @@
 .img {
     width: 65px;
 }
+
+.navlink {
+    text-decoration: none;
+}

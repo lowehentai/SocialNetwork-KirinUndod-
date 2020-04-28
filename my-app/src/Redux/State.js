@@ -1,8 +1,14 @@
+//Value dispatch
+const ADD_POST = 'ADD-POST',
+    UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
+    ADD_TIME = 'ADD-TIME',
+    SEND_MESSAGE = 'SEND-MESSAGE',
+    UPDATE_MESSAGE_INPUT = 'UPDATE_MESSAGE_INPUT';
 let store = {
     _state: {
         Dat_Users: {
             Dat_Information: [
-                { id: 1, name: 'Hentai Hentaiovic', status: 'Tester', extraStatus: '', avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU' }
+                { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU' }
             ],
             TestingU: ''
         },
@@ -39,65 +45,154 @@ let store = {
         //user chat
         MessagesBlock: {
             Users: [
-                { id: 1, image: '', url: '', name: 'Hentai' },
-                { id: 2, image: '', url: '', name: 'Ecchi' },
-                { id: 3, image: '', url: '', name: 'Vladimir' },
-                { id: 4, image: '', url: '', name: 'Undod' },
-                { id: 5, image: '', url: '', name: 'NoN' },
-                { id: 6, image: '', url: '', name: 'Skritiy' }
-            ]
+                { id: 1, image: '', url: '/message/1', name: 'Hentai', lastMessage: '--', lastMsgTime: '12:00' },
+                { id: 2, image: '', url: '/message/2', name: 'Ecchi', lastMessage: '--', lastMsgTime: '12:00' },
+                { id: 3, image: '', url: '/message/3', name: 'Vladimir', lastMessage: '--', lastMsgTime: '12:00' },
+                { id: 4, image: '', url: '/message/4', name: 'Undod', lastMessage: '--', lastMsgTime: '12:00' },
+                { id: 5, image: '', url: '/message/5', name: 'NoN', lastMessage: '--', lastMsgTime: '12:00' },
+                { id: 6, image: '', url: '/message/6', name: 'Skritiy', lastMessage: '--', lastMsgTime: '12:00' }
+            ],
+            DialogMessage: [
+                { id: 1, msg: 'Hello !', image: 'NoN', name: 'Hentai', lastTime: '12:00' }
+                // { id: 2, msg: 'Hi', image: 'NoN', name: 'asd', lastTime: '12:00' },
+                // { id: 3, msg: 'Hentai is best !', image: 'NoN', name: 'dsa', lastTime: '12:00' },
+                // { id: 4, msg: 'はい', image: 'NoN', name: 'asd', lastTime: '12:00' },
+                // { id: 5, msg: 'さようなら！', image: 'NoN', name: 'dsa', lastTime: '12:00' }
+            ],
+            Input: ''
         }
-    },
-    getState() {
-        return this._state;
     },
     _ReRender() {
         //import the updateNewPostText
     },
-    addTime() {
-        let dat = new Date(),
-            myHours = dat.getHours(),
-            myMinutes = dat.getMinutes(),
-            timeSet;
-        if (myHours <= 9) {
-            myHours = '0' + myHours;
-        } if (myMinutes <= 9) {
-            myMinutes = '0' + myMinutes;
-        }
-        timeSet = myHours + ':' + myMinutes;
-        return timeSet;
-    },
-    addPost() {
-        let newPost = {
-            id: 7,
-            Time: this.addTime(),
-            avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU',
-            like: 0,
-            message: 0,
-            name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
-            descr: this._state.Dat_Users.TestingU,
-            image: ''
-        };
-        this._state.Dat_MediaMenu.Dat_UsersInfo.push(newPost);
-        this._ReRender(this._state);
-        this._state.Dat_Users.TestingU = '';
-    },
 
-    updateNewPostText(newText) {
-        this._state.Dat_Users.TestingU = newText;
-        this._ReRender(this._state);
+    getState() {
+        return this._state;
     },
-
     subscribe(observer) {
         this._ReRender = observer;
+    },
+
+    dispatch(action) { // {type: 'ADD-POST'}
+        if (action.type === ADD_TIME) {
+            let dat = new Date(),
+                myHours = dat.getHours(),
+                myMinutes = dat.getMinutes(),
+                timeSet;
+            if (myHours <= 9) {
+                myHours = '0' + myHours;
+            } if (myMinutes <= 9) {
+                myMinutes = '0' + myMinutes;
+            }
+            timeSet = myHours + ':' + myMinutes;
+            return timeSet;
+        }
+
+        //CommentInput.js
+        else if (action.type === ADD_POST) {
+            let newPost = {
+                id: 7,
+                Time: this.dispatch({ type: 'ADD-TIME' }),
+                avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU',
+                like: 0,
+                message: 0,
+                name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
+                descr: this._state.Dat_Users.TestingU,
+                image: ''
+            };
+            this._state.Dat_MediaMenu.Dat_UsersInfo.push(newPost);
+            this._ReRender(this._state);
+            this._state.Dat_Users.TestingU = '';
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+            this._state.Dat_Users.TestingU = action.newText;
+            this._ReRender(this._state);
+        }
+
+        //Dialogs.js
+        else if (action.type === SEND_MESSAGE) {
+            let newMsg = {
+                id: 2,
+                msg: this._state.MessagesBlock.Input,
+                image: '',
+                name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
+                lastTime: this.dispatch({ type: 'ADD-TIME' })
+            };
+            this._state.MessagesBlock.DialogMessage.push(newMsg);
+            this._ReRender(this._state);
+            this._state.MessagesBlock.Input = '';
+        } else if (action.type === UPDATE_MESSAGE_INPUT) {
+            this._state.MessagesBlock.Input = action.newMsg;
+            this._ReRender(this._state);
+        }
     }
 }
 
+// export const addPostCreatorAction = (text) => {
+//     return {
+//         type: 'ADD-POST',
+//         newText: text
+//     }
+// }
+// export const updateNewPostTextCreatorAction = (text) => {
+//     return {
+//         type: 'UPDATE-NEW-POST-TEXT',
+//         newText: text
+//     }
+//}
+//alternative writing
 
+//CommentInput.js
+export const addPostCreatorAction = (text) => ({ type: ADD_POST, newText: text })
+export const updateNewPostTextCreatorAction = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-
+//Dialogs.js
+export const sendMessageCreatorAction = (text) => ({ type: SEND_MESSAGE, newMsg: text })
+export const updateMessageInputCreatorAction = (text) => ({ type: UPDATE_MESSAGE_INPUT, newMsg: text })
 
 window.store = store;
 export default store;
 
 //shotre - OOP
+
+// _addPost() {
+//     let newPost = {
+//         id: 7,
+//         Time: this.dispatch({ type: 'ADD-TIME' }),
+//         avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU',
+//         like: 0,
+//         message: 0,
+//         name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
+//         descr: this._state.Dat_Users.TestingU,
+//         image: ''
+//     };
+//     this._state.Dat_MediaMenu.Dat_UsersInfo.push(newPost);
+//     this._ReRender(this._state);
+//     this._state.Dat_Users.TestingU = '';
+// },
+// _updateNewPostText(newText) {
+//     this._state.Dat_Users.TestingU = newText;
+//     this._ReRender(this._state);
+// },
+// _addTime() {
+//     let dat = new Date(),
+//         myHours = dat.getHours(),
+//         myMinutes = dat.getMinutes(),
+//         timeSet;
+//     if (myHours <= 9) {
+//         myHours = '0' + myHours;
+//     } if (myMinutes <= 9) {
+//         myMinutes = '0' + myMinutes;
+//     }
+//     timeSet = myHours + ':' + myMinutes;
+//     return timeSet;
+// },
+// dispatch(action) { // {type: 'ADD-POST'}
+//     if (action.type === 'ADD-POST') {
+//         this._addPost();
+//     } else if (action.type === 'ADD-TIME') {
+//         this._addTime();
+//     } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+//         this._updateNewPostText(action.newText);
+//     }
+// }
+// }

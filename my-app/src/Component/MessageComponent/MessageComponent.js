@@ -5,7 +5,7 @@ import MessageComponentStyle from './MessageComponent.module.css';
 import UserMessageBlock from '../UserMessageBlock/UserMessageBlock.js';
 
 const MessageComponent = (props) => {
-    let message = props.Info.map(el => <UserMessageBlock name={el.name} />);
+    let message = props.Info.map(el => <UserMessageBlock name={el.name} url={el.url} lastMessage={el.lastMessage} lastMsgTime={el.lastMsgTime} />);
     return (
         <div calssName={MessageComponentStyle.MessageComponent}>
             <div className={MessageComponentStyle.block}>

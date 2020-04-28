@@ -1,24 +1,28 @@
 import React from 'react';
+//NavLink Import
+import { NavLink } from 'react-router-dom';
 //Style Import
 import UserMessageBlockStyle from './UserMessageBlock.module.css';
 
 const UserMessageBlock = (props) => {
-    return(
+    return (
         <div className={UserMessageBlockStyle.UserMessageBlock}>
-            <div className={UserMessageBlockStyle.block}>
-                <img src={require('../All_Icons/Vectoravatar.png')} className={UserMessageBlockStyle.img}></img>
-                <div className={UserMessageBlockStyle.text_wrapper}>
-                    <div className={UserMessageBlockStyle.UsersName}>
-                        {props.name}
+            <NavLink to={props.url} className={UserMessageBlockStyle.navlink}>
+                <div className={UserMessageBlockStyle.block}>
+                    <img src={require('../All_Icons/Vectoravatar.png')} className={UserMessageBlockStyle.img}></img>
+                    <div className={UserMessageBlockStyle.text_wrapper}>
+                        <div className={UserMessageBlockStyle.UsersName}>
+                            {props.name}
+                        </div>
+                        <div className={UserMessageBlockStyle.LastMessage}>
+                            {props.lastMessage}
+                        </div>
                     </div>
-                    <div className={UserMessageBlockStyle.LastMessage}>
-                        I Love Hentai !
+                    <div className={UserMessageBlockStyle.TimeLastMessage}>
+                        {props.lastMsgTime}
                     </div>
                 </div>
-                <div className={UserMessageBlockStyle.TimeLastMessage}>
-                    12:00
-                </div>
-            </div>
+            </NavLink>
         </div>
     );
 }

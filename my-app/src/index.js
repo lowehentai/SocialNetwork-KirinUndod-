@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import store from './Redux/State.js';
 
 let ReRender = () => {
-    ReactDOM.render(<React.StrictMode><App Info={store.getState()} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)} /></React.StrictMode>, document.getElementById('root'));
+    ReactDOM.render(<React.StrictMode><App Info={store.getState()} dispatch={store.dispatch.bind(store)} /></React.StrictMode>, document.getElementById('root'));
 }
 
 ReRender(store.getState());
