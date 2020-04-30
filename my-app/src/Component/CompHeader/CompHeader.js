@@ -11,7 +11,7 @@ function CompHeader(props) {
         <div className={HeaderStyle.Header}>
             <div className={HeaderStyle.container}>
                 <div className={HeaderStyle.wrapper}>
-                    <div className={HeaderStyle.logo}>KirinUndod<span className={HeaderStyle.version}>Unit V1.2</span></div>
+                    <div className={HeaderStyle.logo}>KirinUndod<span className={HeaderStyle.version}>Unit V1.6</span></div>
                     <div className={HeaderStyle.search}>
                         <img className={HeaderStyle.img} src={require('../All_Icons/Vectorlup.png')}></img>
                         <form method="POST">

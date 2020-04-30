@@ -3,7 +3,6 @@ import React from 'react';
 import CommentInputStyle from './CommentInput.module.css';
 //Utility Import 
 import { addPostCreatorAction, updateNewPostTextCreatorAction } from '../../Redux/CommentInput-reducer.js';
-
 const CommentInput = (props) => {
     let newPostElemnt = React.createRef(),
     addPost = () => {

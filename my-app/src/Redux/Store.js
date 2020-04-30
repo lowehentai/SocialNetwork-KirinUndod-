@@ -93,7 +93,7 @@ export const myTime = () => {
         timeSet;
     if (myHours <= 9) {
         myHours = '0' + myHours;
-    } else if (myMinutes <= 9) {
+    } if (myMinutes <= 9) {
         myMinutes = '0' + myMinutes;
     }
     timeSet = myHours + ':' + myMinutes;

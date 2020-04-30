@@ -7,6 +7,7 @@ import DialogsStyle from './Dialogs.module.css';
 import DialogsElement from './DialogsElement/DialogsElement.js';
 //Utility Import 
 import { sendMessageCreatorAction, updateMessageInputCreatorAction } from '../../Redux/Dialog-reducer.js';
+import { myTime } from '../../Redux/Store.js';
 
 const Dialogs = (props) => {
     debugger;
@@ -35,7 +36,7 @@ const Dialogs = (props) => {
                             Hentai
                         </div>
                         <div className={DialogsStyle.LastOnlineTime}>
-                            123
+                            {myTime()}
                         </div>
                     </div>
 

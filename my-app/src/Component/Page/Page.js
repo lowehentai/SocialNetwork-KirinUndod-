@@ -15,40 +15,40 @@ import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import Dialogs from '../Dialogs/Dialogs.js';
 
 const Page = (props) => {
-    let ContentMap = props.Info.UsersPosted.UserPosted.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
-        HomeComponentMap = props.Info.User.Information.map(el => <HomeComponent avatarImg={el.avatarImg} />),
-        HomeUsersComponentMap = props.Info.User.Information.map(el => <HomeUsersComponent name={el.name} />);
+    let ContentMap = props.Info.CommentInput.UsersPosted.UserPosted.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
+        HomeComponentMap = props.Info.CommentInput.User.Information.map(el => <HomeComponent avatarImg={el.avatarImg} />),
+        HomeUsersComponentMap = props.Info.CommentInput.User.Information.map(el => <HomeUsersComponent name={el.name} />);
     return (
         <Router>
             <div className={PageStyle.Page}>
                 <div className={PageStyle.container}>
                     <div className={PageStyle.Left}>
-                        <QuickAccess Info={props.Info.QuickAccess.Puncts} />
+                        <QuickAccess Info={props.Info.PropsInfo.QuickAccess.Puncts} />
                     </div>
                     <div className={PageStyle.Center}>
                         <Route path='/main'>
-                            <CommentInput Info={props.Info.UsersPosted} dispatch={props.dispatch} />
+                            <CommentInput Info={props.Info.CommentInput.UsersPosted} dispatch={props.dispatch} />
                             {ContentMap}
                         </Route>
                         <Route path='/home'>
                             {HomeComponentMap}
                         </Route>
                         <Route exact path='/message'>
-                            <MessageComponent Info={props.Info.MessagesBlock.UserDialogBlock} />
+                            <MessageComponent Info={props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
                         </Route>
                         <Route path='/message/1'>
-                            <Dialogs Info={props.Info.UserMessage} dispatch={props.dispatch}/>
+                            <Dialogs Info={props.Info.Dialogs.UserMessage} dispatch={props.dispatch}/>
                         </Route>
                     </div>
                     <div className={PageStyle.Right}>
                         <Route path='/main'>
-                            <MediaMenu Info={props.Info.MediaMenu.Puncts} />
+                            <MediaMenu Info={props.Info.PropsInfo.MediaMenu.Puncts} />
                         </Route>
                         <Route path='/home'>
                             {HomeUsersComponentMap}
                         </Route>
                         <Route path='/message'>
-                            <MessageTypeBlock Info={props.Info.MessageType.Puncts} />
+                            <MessageTypeBlock Info={props.Info.PropsInfo.MessageType.Puncts} />
                         </Route>
                     </div>
                 </div>
