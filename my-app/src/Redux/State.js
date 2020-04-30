@@ -1,42 +1,42 @@
-//Value dispatch
-const ADD_POST = 'ADD-POST',
-    UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
-    ADD_TIME = 'ADD-TIME',
-    SEND_MESSAGE = 'SEND-MESSAGE',
-    UPDATE_MESSAGE_INPUT = 'UPDATE_MESSAGE_INPUT';
+import CommentInputReducer from './CommentInput-reducer.js';
+import DialogsReducer from './Dialog-reducer.js';
+
+
 let store = {
     _state: {
-        Dat_Users: {
-            Dat_Information: [
+        User: {
+            Information: [
                 { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU' }
-            ],
-            TestingU: ''
+            ]
         },
-        Dat_QuickAccess: {
-            Dat_Button: [
+        QuickAccess: {
+            Puncts: [
                 { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'home', name: 'Home' },
                 { id: 2, image: '../../All_Icons/Vectorhome.png', url: 'main', name: 'Main' },
                 { id: 3, image: '../../All_Icons/Vectorhome.png', url: 'message', name: 'Message' },
                 { id: 4, image: '../../All_Icons/Vectorhome.png', url: 'friend', name: 'Friend' }
             ]
         },
-        Dat_MediaMenu: {
-            Dat_Button: [
+        MediaMenu: {
+            Puncts: [
                 { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'main/news', name: 'News' },
                 { id: 2, image: '../../All_Icons/Vectorhome.png', url: 'main/photo', name: 'Photo' },
                 { id: 3, image: '../../All_Icons/Vectorhome.png', url: 'main/video', name: 'Video' }
-            ],
-            Dat_UsersInfo: [
+            ]
+        },
+        UsersPosted: {
+            UserPosted: [
                 { id: 1, Time: '12:00', avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS74_Vu6drYZHR24vv1UN4ueMtn2_d3wYXqBa2TO10p4wKAKPRy&usqp=CAU', like: 192, message: 51, name: 'Hentai is good !', descr: 'Hentai <3!', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKvJ4WBzDoGvdtRkIGUyde9fC0DTcIDMQ2RlOm5YUqM3Vr8ojX&usqp=CAU' }
                 // { id: 2, Time: '12:00', avatarImg: 'NoN', like: 112, message: 55, name: 'Hentai 2', descr: 'Hentai \"Amanee!\" the best !', image: '' },
                 // { id: 3, Time: '12:00', avatarImg: 'NoN', like: 152, message: 58, name: 'Hentai 3', descr: 'Hey !', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQZBULcIKT4DgTHbWetD2UYlH-QZZ8NVrFH1KwiZwTZLg_zaa2m&usqp=CAU' },
                 // { id: 4, Time: '12:00', avatarImg: 'NoN', like: 172, message: 54, name: 'Hentai 4', descr: 'Hi World !', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS74_Vu6drYZHR24vv1UN4ueMtn2_d3wYXqBa2TO10p4wKAKPRy&usqp=CAU' },
                 // { id: 5, Time: '12:00', avatarImg: 'NoN', like: 92, message: 85, name: 'Hentai 5', descr: 'Comment Testing !', image: '' },
                 // { id: 6, Time: '12:00', avatarImg: 'NoN', like: 62, message: 53, name: 'Hentai 6', descr: 'oh ya !', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQiKxD7WkZCz5G9nZBHgMSxEkLfJqah2EW3SNizKCZaBB99bqQV&usqp=CAU' }
-            ]
+            ],
+            PostInput: ''
         },
-        Dat_Message: {
-            Dat_MessageType: [
+        MessageType: {
+            Puncts: [
                 { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'message/allmessage', name: 'All Message' },
                 { id: 2, image: '../../All_Icons/Vectorhome.png', url: 'message/unread', name: 'Unread' },
                 { id: 3, image: '../../All_Icons/Vectorhome.png', url: 'message/important', name: 'Important' }
@@ -44,28 +44,29 @@ let store = {
         },
         //user chat
         MessagesBlock: {
-            Users: [
+            UserDialogBlock: [
                 { id: 1, image: '', url: '/message/1', name: 'Hentai', lastMessage: '--', lastMsgTime: '12:00' },
                 { id: 2, image: '', url: '/message/2', name: 'Ecchi', lastMessage: '--', lastMsgTime: '12:00' },
                 { id: 3, image: '', url: '/message/3', name: 'Vladimir', lastMessage: '--', lastMsgTime: '12:00' },
                 { id: 4, image: '', url: '/message/4', name: 'Undod', lastMessage: '--', lastMsgTime: '12:00' },
                 { id: 5, image: '', url: '/message/5', name: 'NoN', lastMessage: '--', lastMsgTime: '12:00' },
                 { id: 6, image: '', url: '/message/6', name: 'Skritiy', lastMessage: '--', lastMsgTime: '12:00' }
-            ],
-            DialogMessage: [
+            ]
+        },
+        UserMessage: {
+            UserDialogs: [
                 { id: 1, msg: 'Hello !', image: 'NoN', name: 'Hentai', lastTime: '12:00' }
                 // { id: 2, msg: 'Hi', image: 'NoN', name: 'asd', lastTime: '12:00' },
                 // { id: 3, msg: 'Hentai is best !', image: 'NoN', name: 'dsa', lastTime: '12:00' },
                 // { id: 4, msg: 'はい', image: 'NoN', name: 'asd', lastTime: '12:00' },
                 // { id: 5, msg: 'さようなら！', image: 'NoN', name: 'dsa', lastTime: '12:00' }
             ],
-            Input: ''
+            UserDialogsInput: ''
         }
     },
     _ReRender() {
         //import the updateNewPostText
     },
-
     getState() {
         return this._state;
     },
@@ -74,57 +75,29 @@ let store = {
     },
 
     dispatch(action) { // {type: 'ADD-POST'}
-        if (action.type === ADD_TIME) {
-            let dat = new Date(),
-                myHours = dat.getHours(),
-                myMinutes = dat.getMinutes(),
-                timeSet;
-            if (myHours <= 9) {
-                myHours = '0' + myHours;
-            } if (myMinutes <= 9) {
-                myMinutes = '0' + myMinutes;
-            }
-            timeSet = myHours + ':' + myMinutes;
-            return timeSet;
-        }
-
         //CommentInput.js
-        else if (action.type === ADD_POST) {
-            let newPost = {
-                id: 7,
-                Time: this.dispatch({ type: 'ADD-TIME' }),
-                avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU',
-                like: 0,
-                message: 0,
-                name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
-                descr: this._state.Dat_Users.TestingU,
-                image: ''
-            };
-            this._state.Dat_MediaMenu.Dat_UsersInfo.push(newPost);
-            this._ReRender(this._state);
-            this._state.Dat_Users.TestingU = '';
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.Dat_Users.TestingU = action.newText;
-            this._ReRender(this._state);
-        }
+        CommentInputReducer(this._state, action);
 
         //Dialogs.js
-        else if (action.type === SEND_MESSAGE) {
-            let newMsg = {
-                id: 2,
-                msg: this._state.MessagesBlock.Input,
-                image: '',
-                name: this._state.Dat_Users.Dat_Information.map(element => [element.name]),
-                lastTime: this.dispatch({ type: 'ADD-TIME' })
-            };
-            this._state.MessagesBlock.DialogMessage.push(newMsg);
-            this._ReRender(this._state);
-            this._state.MessagesBlock.Input = '';
-        } else if (action.type === UPDATE_MESSAGE_INPUT) {
-            this._state.MessagesBlock.Input = action.newMsg;
-            this._ReRender(this._state);
-        }
+        DialogsReducer(this._state, action);
+
+        //ReRender Virtual DOM 
+        this._ReRender(this._state);
     }
+}
+
+export const myTime = () => {
+    let dat = new Date(),
+        myHours = dat.getHours(),
+        myMinutes = dat.getMinutes(),
+        timeSet;
+    if (myHours <= 9) {
+        myHours = '0' + myHours;
+    } else if (myMinutes <= 9) {
+        myMinutes = '0' + myMinutes;
+    }
+    timeSet = myHours + ':' + myMinutes;
+    return timeSet;
 }
 
 // export const addPostCreatorAction = (text) => {
@@ -140,14 +113,6 @@ let store = {
 //     }
 //}
 //alternative writing
-
-//CommentInput.js
-export const addPostCreatorAction = (text) => ({ type: ADD_POST, newText: text })
-export const updateNewPostTextCreatorAction = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-
-//Dialogs.js
-export const sendMessageCreatorAction = (text) => ({ type: SEND_MESSAGE, newMsg: text })
-export const updateMessageInputCreatorAction = (text) => ({ type: UPDATE_MESSAGE_INPUT, newMsg: text })
 
 window.store = store;
 export default store;

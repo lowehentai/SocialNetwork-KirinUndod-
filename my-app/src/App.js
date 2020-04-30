@@ -13,7 +13,7 @@ function App(props) {
 	return (
 		<Router>
 			<div className={appStyle.App}>
-				<Route path='/' render={() => <CompHeader Info={props.Info.Dat_Users.Dat_Information}/>}></Route>
+				<Route path='/' render={() => <CompHeader Info={props.Info.User.Information}/>}></Route>
 				<Route exact path='/as' render={() => <h1 className={appStyle.Pred}>Click Icon</h1>}></Route>
 				<Route path='/' render={() => <Page Info={props.Info} dispatch={props.dispatch} />}></Route>
 			</div>
