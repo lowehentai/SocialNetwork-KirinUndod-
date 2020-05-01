@@ -26,28 +26,28 @@ const Page = (props) => {
                         <QuickAccess Info={props.Info.PropsInfo.QuickAccess.Puncts} />
                     </div>
                     <div className={PageStyle.Center}>
-                        <Route path='/main'>
+                        <Route path='/lok/main'>
                             <CommentInput Info={props.Info.CommentInput.UsersPosted} dispatch={props.dispatch} />
                             {ContentMap}
                         </Route>
-                        <Route path='/home'>
+                        <Route path='/lok/home'>
                             {HomeComponentMap}
                         </Route>
-                        <Route exact path='/message'>
+                        <Route exact path='/lok/message'>
                             <MessageComponent Info={props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
                         </Route>
-                        <Route path='/message/1'>
-                            <Dialogs Info={props.Info.Dialogs.UserMessage} dispatch={props.dispatch}/>
+                        <Route path='/lok/message/1'>
+                            <Dialogs Info={props.Info.Dialogs.UserMessage} dispatch={props.dispatch} />
                         </Route>
                     </div>
                     <div className={PageStyle.Right}>
-                        <Route path='/main'>
+                        <Route path='/lok/main'>
                             <MediaMenu Info={props.Info.PropsInfo.MediaMenu.Puncts} />
                         </Route>
-                        <Route path='/home'>
+                        <Route path='/lok/home'>
                             {HomeUsersComponentMap}
                         </Route>
-                        <Route path='/message'>
+                        <Route path='/lok/message'>
                             <MessageTypeBlock Info={props.Info.PropsInfo.MessageType.Puncts} />
                         </Route>
                     </div>

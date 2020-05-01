@@ -1,67 +1,77 @@
-html {
-    background-color: #6C6C6C;
-    padding-bottom: 20px;
+html { 
+	height: 100%;
+	position: relative;
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.App {
+	background-color: #6d6d6d;
+	position: absolute;
+	width: 100%;
+
+	min-height: 100%;
+	max-height: 1000%;
+	/*corrected value*/
 }
 
 .Pred {
-    text-align: center;
-    color: #ffffff;
-    font-size: 40px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 40px;
 }
 
 
 ::-webkit-scrollbar-button {
-    background-image: url('');
-    background-repeat: no-repeat;
-    width: 5px;
-    height: 10px;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: #00000000;
-    opacity: 0;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    background-color: #646464;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    transition: 0.2s all;
-    -webkit-transition: 0.2s all;
-    -moz-transition: 0.2s all;
-    -ms-transition: 0.2s all;
-    -o-transition: 0.2s all;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #808080;
-  }
-  
-  ::-webkit-resizer {
-    background-image: url('');
-    background-repeat: no-repeat;
-    width: 10px;
-    height: 0px;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 6px;
-    display: none;
-  }
+	background-image: url('');
+	background-repeat: no-repeat;
+	width: 5px;
+	height: 10px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #00000000;
+	opacity: 0;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	background-color: #646464;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+	transition: 0.2s all;
+	-webkit-transition: 0.2s all;
+	-moz-transition: 0.2s all;
+	-ms-transition: 0.2s all;
+	-o-transition: 0.2s all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #808080;
+}
+
+::-webkit-resizer {
+	background-image: url('');
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 0px;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	display: none;
+}
