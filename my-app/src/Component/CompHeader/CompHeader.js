@@ -3,29 +3,20 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //Style Import -- Import Log.module.css
 import HeaderStyle from './CompHeader.module.css';
-import LogStyle from '../LogPage/Log/Log.module.css';
-
 
 function CompHeader(props) {
     let myName = props.Info.map(element => [element.name]),
         myAvatar = props.Info.map(element => [element.avatarImg]),
         Status = props.Info.map(element => [element.status]),
-        ExtraStatus = props.Info.map(element => [element.extraStatus]),
-        searchLine = window.location,
-        isBackground;
-    if (searchLine.hash === '#log&singIn' || searchLine.hash === '#log&create') {
-        isBackground = true;
-    } else {
-        isBackground = false;
-    }
-
+        ExtraStatus = props.Info.map(element => [element.extraStatus]);
+    debugger;
     return (
         <Router>
-            <div style={{ backgroundColor: isBackground ? '#000000a2' : '#404040' }} className={HeaderStyle.Header}>
+            <div className={HeaderStyle.Header}>
                 <div className={HeaderStyle.container}>
                     <div className={HeaderStyle.wrapper}>
-                        <div className={HeaderStyle.logo}>KirinUndod<span className={HeaderStyle.version}>Unit V1.6</span></div>
-                        <Route path='/prot'>
+                        <div className={HeaderStyle.logo}>{props.Social.Name}<span className={HeaderStyle.version}>{props.Social.Version}</span></div>
+                        <Route path='/'>
                             <div className={HeaderStyle.search}>
                                 <img className={HeaderStyle.img} src={require('../All_Icons/Vectorlup.png')}></img>
                                 <form method="POST">

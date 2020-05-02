@@ -4,22 +4,16 @@ import { NavLink } from 'react-router-dom';
 //Style Import
 import DialogsStyle from './Dialogs.module.css';
 //Component Import 
-import DialogsElement from './DialogsElement/DialogsElement.js';
-//Utility Import 
-import { sendMessageCreatorAction, updateMessageInputCreatorAction } from '../../Redux/Dialog-reducer.js';
-import { myTime } from '../../Redux/Store.js';
 
 const Dialogs = (props) => {
-    debugger;
-    let DialogsElementMap = props.Info.UserDialogs.map(el => <DialogsElement name={el.name} msg={el.msg} image={el.image} lastTime={el.lastTime} />),
-        textInput = React.createRef(),
-        sendMsg = () => {
+    let textInput = React.createRef(),
+        onSendMsg = () => {
             let text = textInput.current.value;
-            props.dispatch(sendMessageCreatorAction(text));
+            props.sendMessage(text);
         },
         onMsgChange = () => {
             let text = textInput.current.value;
-            props.dispatch(updateMessageInputCreatorAction(text));
+            props.updateMessageInput(text);
         };
 
     return (
@@ -36,7 +30,7 @@ const Dialogs = (props) => {
                             Hentai
                         </div>
                         <div className={DialogsStyle.LastOnlineTime}>
-                            {myTime()}
+                            {props.myTime()}
                         </div>
                     </div>
 
@@ -53,7 +47,7 @@ const Dialogs = (props) => {
                 </div>
                 <div className={DialogsStyle.ContentMessages}>
                     {/* Content Messages */}
-                    {DialogsElementMap}
+                    {props.DialogsElementMap}
                 </div>
                 <div className={DialogsStyle.bottom}>
                     <div className={DialogsStyle.addMedia}>
@@ -62,8 +56,8 @@ const Dialogs = (props) => {
                     {/* form */}
                     <div>
                         <div className={DialogsStyle.input_wrapper}>
-                            <input className={DialogsStyle.input} onChange={onMsgChange} value={props.Info.UserDialogsInput} ref={textInput} type="text" maxLength="120" placeholder="Write Message" autoFocus></input>
-                            <button className={DialogsStyle.sendButton} onClick={sendMsg}>
+                            <input className={DialogsStyle.input} onChange={onMsgChange} value={props.store.UserDialogsInput} ref={textInput} type="text" maxLength="120" placeholder="Write Message" autoFocus></input>
+                            <button className={DialogsStyle.sendButton} onClick={onSendMsg}>
                                 <img src={require('../All_Icons/.fas.fa-location-arrowsend.png')} className={DialogsStyle.imgSend}></img>
                             </button>
                         </div>

@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PageStyle from './Page.module.css';
 //Commonent Import
 import QuickAccess from '../QuickAccess/QuickAccess.js';
-import CommentInput from '../CommentInput/CommentInput.js';
+import CommentInputContainer from '../CommentInput/CommentInputContainer.js';
 import MediaMenu from '../MediaMenu/MediaMenu.js';
 import Content from '../Content/Content.js';
 import HomeComponent from '../HomeComponent/HomeComponent.js';
 import HomeUsersComponent from '../HomeUsersComponent/HomeUsersComponent.js';
 import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
-import Dialogs from '../Dialogs/Dialogs.js';
+import DialogsContainer from '../Dialogs/DialogsContainer.js';
 
 const Page = (props) => {
     let ContentMap = props.Info.CommentInput.UsersPosted.UserPosted.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
@@ -27,7 +27,7 @@ const Page = (props) => {
                     </div>
                     <div className={PageStyle.Center}>
                         <Route path='/lok/main'>
-                            <CommentInput Info={props.Info.CommentInput.UsersPosted} dispatch={props.dispatch} />
+                            <CommentInputContainer store={props.Info} dispatch={props.dispatch} />
                             {ContentMap}
                         </Route>
                         <Route path='/lok/home'>
@@ -37,7 +37,7 @@ const Page = (props) => {
                             <MessageComponent Info={props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
                         </Route>
                         <Route path='/lok/message/1'>
-                            <Dialogs Info={props.Info.Dialogs.UserMessage} dispatch={props.dispatch} />
+                            <DialogsContainer store={props.Info} dispatch={props.dispatch} />
                         </Route>
                     </div>
                     <div className={PageStyle.Right}>

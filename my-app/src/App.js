@@ -11,12 +11,15 @@ import Page from './Component/Page/Page.js';
 import Log from './Component/LogPage/Log/Log.js';
 import SingInPage from './Component/LogPage/SingInPage/SingInPage.js';
 import CreateAccPage from './Component/LogPage/CreateAccPage/CreateAccPage.js';
+import CompHeaderLog from './Component/CompHeader/CompHeaderLog/CompHeaderLog.js';
 
 function App(props) {
+	debugger;
 	return (
 		<Router>
 			<div className={appStyle.App}>
-				<Route path='/' render={() => <CompHeader Info={props.Info.Dialogs.User.Information} />}></Route>
+				<Route path='/' render={() => <CompHeaderLog Social={props.Info.PropsInfo.SocialNetwork} />}></Route>
+				<Route path='/lok' render={() => <CompHeader Info={props.Info.Dialogs.User.Information} Social={props.Info.PropsInfo.SocialNetwork}/>}></Route>
 				<Route exact path='/' render={() => <Log />}></Route>
 				<Route path='/lok' render={() => <Page Info={props.Info} dispatch={props.dispatch} />}></Route>
 				<Route path='/sing' render={() => <SingInPage />}></Route>

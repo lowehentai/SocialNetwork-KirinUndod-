@@ -12,6 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: showBlock 2s ease 0s 1;
+    -webkit-animation: showBlock 2s ease 0s 1;
 }
 
 .block {

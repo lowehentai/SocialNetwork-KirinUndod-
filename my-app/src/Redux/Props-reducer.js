@@ -1,4 +1,8 @@
 let initialState = {
+    SocialNetwork: {
+        Name: 'KirinUndod',
+        Version: 'Unit V1.7'
+    },
     QuickAccess: {
         Puncts: [
             { id: 1, image: '../../All_Icons/Vectorhome.png', url: 'lok/home', name: 'Home' },
