@@ -4,7 +4,7 @@ import SingInPageStyle from './SingInPage.module.css';
 
 const SingInPage = () => {
     return (
-        <div className={SingInPageStyle.SingIn}>
+        <div className={SingInPageStyle.SingInPage}>
             <div className={SingInPageStyle.block}>
                 <h2 className={SingInPageStyle.title}>Login</h2>
                 <form className={SingInPageStyle.form}>
