@@ -1,7 +1,7 @@
 let initialState = {
     SocialNetwork: {
         Name: 'KirinUndod',
-        Version: 'Unit V1.8'
+        Version: 'Unit V1.9'
     },
     QuickAccess: {
         Puncts: [

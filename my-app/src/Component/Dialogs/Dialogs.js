@@ -20,7 +20,7 @@ const Dialogs = (props) => {
         <div className={DialogsStyle.Dialogs}>
             <div className={DialogsStyle.block}>
                 <div className={DialogsStyle.head}>
-                    <NavLink to='/message'>
+                    <NavLink to='/lok/message'>
                         <button className={DialogsStyle.buttonPrev}>
                             {'<'} Back
                     </button>
@@ -30,7 +30,7 @@ const Dialogs = (props) => {
                             Hentai
                         </div>
                         <div className={DialogsStyle.LastOnlineTime}>
-                            {props.myTime()}
+                            {props.myTime}
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@ const Dialogs = (props) => {
                     {/* form */}
                     <div>
                         <div className={DialogsStyle.input_wrapper}>
-                            <input className={DialogsStyle.input} onChange={onMsgChange} value={props.store.UserDialogsInput} ref={textInput} type="text" maxLength="120" placeholder="Write Message" autoFocus></input>
+                            <input className={DialogsStyle.input} onChange={onMsgChange} value={props.UserDialogsInput} ref={textInput} type="text" maxLength="120" placeholder="Write Message" autoFocus></input>
                             <button className={DialogsStyle.sendButton} onClick={onSendMsg}>
                                 <img src={require('../All_Icons/.fas.fa-location-arrowsend.png')} className={DialogsStyle.imgSend}></img>
                             </button>

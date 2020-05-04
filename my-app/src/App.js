@@ -7,29 +7,24 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import appStyle from './App.module.css';
 //Commonent Import
 import CompHeader from './Component/CompHeader/CompHeader.js';
-import Page from './Component/Page/Page.js';
+import PageContainer from './Component/Page/PageContainer.js';
 import Log from './Component/LogPage/Log/Log.js';
 import SingInPage from './Component/LogPage/SingInPage/SingInPage.js';
 import CreateAccPage from './Component/LogPage/CreateAccPage/CreateAccPage.js';
 import CompHeaderLog from './Component/CompHeader/CompHeaderLog/CompHeaderLog.js';
-import StoreContext from './StoreContext';
 
-function App() {
+function App(props) {
 	return (
-		<StoreContext.Consumer>
-			{(store) =>
-				<Router>
-					<div className={appStyle.App}>
-						<Route path='/' render={() => <CompHeaderLog Social={store.getState().PropsInfo.SocialNetwork} />}></Route>
-						<Route path='/lok' render={() => <CompHeader Info={store.getState().Dialogs.User.Information} Social={store.getState().PropsInfo.SocialNetwork} />}></Route>
-						<Route exact path='/' render={() => <Log />}></Route>
-						<Route path='/lok' render={() => <Page Info={store.getState()} />}></Route>
-						<Route path='/sing' render={() => <SingInPage />}></Route>
-						<Route path='/create' render={() => <CreateAccPage />}></Route>
-					</div>
-				</Router >
-			}
-		</StoreContext.Consumer>
+		<Router>
+			<div className={appStyle.App}>
+				<Route path='/' render={() => <CompHeaderLog Social={props.Info.PropsInfo.SocialNetwork} />}></Route>
+				<Route path='/lok' render={() => <CompHeader Info={props.Info.Dialogs.User.Information} Social={props.Info.PropsInfo.SocialNetwork} />}></Route>
+				<Route exact path='/' render={() => <Log />}></Route>
+				<Route path='/lok' render={() => <PageContainer />}></Route>
+				<Route path='/sing' render={() => <SingInPage />}></Route>
+				<Route path='/create' render={() => <CreateAccPage />}></Route>
+			</div>
+		</Router >
 	);
 }
 

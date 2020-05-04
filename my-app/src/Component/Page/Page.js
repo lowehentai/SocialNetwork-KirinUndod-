@@ -7,17 +7,12 @@ import PageStyle from './Page.module.css';
 import QuickAccess from '../QuickAccess/QuickAccess.js';
 import CommentInputContainer from '../CommentInput/CommentInputContainer.js';
 import MediaMenu from '../MediaMenu/MediaMenu.js';
-import Content from '../Content/Content.js';
-import HomeComponent from '../HomeComponent/HomeComponent.js';
-import HomeUsersComponent from '../HomeUsersComponent/HomeUsersComponent.js';
 import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import DialogsContainer from '../Dialogs/DialogsContainer.js';
 
 const Page = (props) => {
-    let ContentMap = props.Info.CommentInput.UsersPosted.UserPosted.map(el => <Content name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
-        HomeComponentMap = props.Info.CommentInput.User.Information.map(el => <HomeComponent avatarImg={el.avatarImg} />),
-        HomeUsersComponentMap = props.Info.CommentInput.User.Information.map(el => <HomeUsersComponent name={el.name} />);
+debugger;
     return (
         <Router>
             <div className={PageStyle.Page}>
@@ -28,10 +23,10 @@ const Page = (props) => {
                     <div className={PageStyle.Center}>
                         <Route path='/lok/main'>
                             <CommentInputContainer store={props.Info} dispatch={props.dispatch} />
-                            {ContentMap}
+                            {props.ContentMap}
                         </Route>
                         <Route path='/lok/home'>
-                            {HomeComponentMap}
+                            {props.HomeComponentMap}
                         </Route>
                         <Route exact path='/lok/message'>
                             <MessageComponent Info={props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
@@ -45,7 +40,7 @@ const Page = (props) => {
                             <MediaMenu Info={props.Info.PropsInfo.MediaMenu.Puncts} />
                         </Route>
                         <Route path='/lok/home'>
-                            {HomeUsersComponentMap}
+                            {props.HomeUsersComponentMap}
                         </Route>
                         <Route path='/lok/message'>
                             <MessageTypeBlock Info={props.Info.PropsInfo.MessageType.Puncts} />

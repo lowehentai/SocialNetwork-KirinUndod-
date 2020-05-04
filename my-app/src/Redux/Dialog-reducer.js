@@ -1,8 +1,7 @@
 import { myTime } from './Store.js';
 
 const SEND_MESSAGE = 'SEND-MESSAGE',
-    UPDATE_MESSAGE_INPUT = 'UPDATE_MESSAGE_INPUT',
-    ADD_TIME = 'ADD-TIME';
+    UPDATE_MESSAGE_INPUT = 'UPDATE_MESSAGE_INPUT';
 
 let initialState = {
     User: {
@@ -24,7 +23,7 @@ let initialState = {
 
 const DialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SEND_MESSAGE:
+        case SEND_MESSAGE: {
             let newMsg = {
                 id: 2,
                 msg: state.UserMessage.UserDialogsInput,
@@ -32,14 +31,18 @@ const DialogsReducer = (state = initialState, action) => {
                 name: state.User.Information.map(element => [element.name]),
                 lastTime: myTime()
             };
-            state.UserMessage.UserDialogs.push(newMsg);
-            state.UserMessage.UserDialogsInput = '';
-            return state;
-
-        case UPDATE_MESSAGE_INPUT:
-            state.UserMessage.UserDialogsInput = action.newMsg;
-            return state;
-
+            let DeepCopyState = {...state};
+            DeepCopyState.UserMessage = {...state.UserMessage};
+            DeepCopyState.UserMessage.UserDialogs = [...state.UserMessage.UserDialogs];
+            DeepCopyState.UserMessage.UserDialogs.push(newMsg);
+            DeepCopyState.UserMessage.UserDialogsInput = '';
+            return DeepCopyState;
+        }
+        case UPDATE_MESSAGE_INPUT: {
+            let DeepCopyState = {...state};
+            DeepCopyState.UserMessage.UserDialogsInput = action.newMsg;
+            return DeepCopyState;
+        }
         default:
             return state;
     }

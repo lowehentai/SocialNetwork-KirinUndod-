@@ -25,7 +25,7 @@ let initialState = {
 
 const CommentInputReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
                 id: 7,
                 Time: myTime(),
@@ -36,13 +36,18 @@ const CommentInputReducer = (state = initialState, action) => {
                 descr: state.UsersPosted.PostInput,
                 image: ''
             };
-            state.UsersPosted.UserPosted.push(newPost);
-            state.UsersPosted.PostInput = '';
-            return state;
-
-        case UPDATE_NEW_POST_TEXT:
-            state.UsersPosted.PostInput = action.newText;
-            return state;
+            let DeepCopyState = { ...state };
+            DeepCopyState.UsersPosted = {...state.UsersPosted};
+            DeepCopyState.UsersPosted.UserPosted = [...state.UsersPosted.UserPosted];
+            DeepCopyState.UsersPosted.UserPosted.push(newPost);
+            DeepCopyState.UsersPosted.PostInput = '';
+            return DeepCopyState;
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            let DeepCopyState = { ...state }
+            DeepCopyState.UsersPosted.PostInput = action.newText;
+            return DeepCopyState;
+        }
         default:
             return state;
     }

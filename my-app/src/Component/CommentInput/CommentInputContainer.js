@@ -3,22 +3,24 @@ import React from 'react';
 import CommentInput from './CommentInput.js';
 //Utility Import 
 import { addPostCreatorAction, updateNewPostTextCreatorAction } from '../../Redux/CommentInput-reducer.js';
-import StoreContext from '../../StoreContext.js';
+import { connect } from 'react-redux';
 
-const CommentInputContainer = () => {
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                let addPost = (text) => {
-                    store.dispatch(addPostCreatorAction(text));
-                };
-                let updateNewPostText = (text) => {
-                    store.dispatch(updateNewPostTextCreatorAction(text));
-                };
-                return <CommentInput addPost={addPost} updateNewPostText={updateNewPostText} Info={store.getState().CommentInput.UsersPosted.PostInput} />
-            }}
-        </StoreContext.Consumer>
-    );
+let mapStateToProps = (state) => {
+    return {  
+        Info: state.CommentInput.UsersPosted.PostInput
+    }
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: (text) => {
+            dispatch(addPostCreatorAction(text));
+        },
+        updateNewPostText: (text) => {
+            dispatch(updateNewPostTextCreatorAction(text));
+        }
+    }
+}
+
+const CommentInputContainer = connect(mapStateToProps, mapDispatchToProps)(CommentInput);
 
 export default CommentInputContainer;

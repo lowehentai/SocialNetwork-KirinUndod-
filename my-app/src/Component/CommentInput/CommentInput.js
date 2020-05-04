@@ -14,7 +14,6 @@ const CommentInput = (props) => {
             let text = newPostElement.current.value;
             props.updateNewPostText(text);
         }
-
     return (
         <div className={CommentInputStyle.CommentInput}>
             <div className={CommentInputStyle.block}>

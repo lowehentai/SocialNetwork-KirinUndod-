@@ -9,7 +9,6 @@ function CompHeader(props) {
         myAvatar = props.Info.map(element => [element.avatarImg]),
         Status = props.Info.map(element => [element.status]),
         ExtraStatus = props.Info.map(element => [element.extraStatus]);
-    debugger;
     return (
         <Router>
             <div className={HeaderStyle.Header}>
