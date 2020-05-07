@@ -8,7 +8,7 @@ function CompHeaderLog(props) {
 
     let searchLine = window.location,
         isBackground;
-    if (searchLine.hash === '#log&singIn' || searchLine.hash === '#log&create') {
+    if (searchLine.hash === '#i' || searchLine.hash === '#u') {
         isBackground = true;
     } else {
         isBackground = false;

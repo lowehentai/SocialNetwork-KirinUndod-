@@ -5,7 +5,7 @@ import QuickAccessStyle from './QuickAccess.module.css';
 import QuickPuncts from './QuickPuncts/QuickPuncts.js';
 
 const QuickAccess = (props) => {
-    let puncts = props.Info.map(punct => <QuickPuncts url={punct.url} name={punct.name} image={punct.image} />)
+    let puncts = props.Info.map(punct => <QuickPuncts key={punct.id} url={punct.url} name={punct.name} image={punct.image} />)
     return (
         <div className={QuickAccessStyle.QuickAccess}>
             <div className={QuickAccessStyle.block}>

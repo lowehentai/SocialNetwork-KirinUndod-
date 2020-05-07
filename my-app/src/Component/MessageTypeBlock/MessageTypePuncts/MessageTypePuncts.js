@@ -6,7 +6,7 @@ import MessageTypePunctsStyle from './MessageTypePuncts.module.css';
 
 const MessageTypePuncts = (props) => {
     return (
-        <div calssName={MessageTypePunctsStyle.MessageTypeBlock}>
+        <div className={MessageTypePunctsStyle.MessageTypeBlock}>
             <div className={MessageTypePunctsStyle.puncts_wrapper}>
                 <NavLink to={'/' + props.url} className={MessageTypePunctsStyle.puncts} activeClassName={MessageTypePunctsStyle.active_button}>
                     {/* <img src={require(props.image)}></img> */}

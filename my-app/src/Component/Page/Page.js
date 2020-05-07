@@ -12,7 +12,6 @@ import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import DialogsContainer from '../Dialogs/DialogsContainer.js';
 
 const Page = (props) => {
-debugger;
     return (
         <Router>
             <div className={PageStyle.Page}>

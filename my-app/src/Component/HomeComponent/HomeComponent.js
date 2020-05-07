@@ -3,7 +3,6 @@ import React from 'react';
 import HomeComponentStyle from './HomeComponent.module.css';
 
 const HomeComponent = (props) => {
-    debugger;
     return (
         <div className={HomeComponentStyle.HomeComponent}>
             <div className={HomeComponentStyle.block}>

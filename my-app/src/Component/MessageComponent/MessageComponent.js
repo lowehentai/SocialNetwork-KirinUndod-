@@ -5,9 +5,9 @@ import MessageComponentStyle from './MessageComponent.module.css';
 import UserMessageBlock from '../UserMessageBlock/UserMessageBlock.js';
 
 const MessageComponent = (props) => {
-    let message = props.Info.map(el => <UserMessageBlock name={el.name} url={el.url} lastMessage={el.lastMessage} lastMsgTime={el.lastMsgTime} />);
+    let message = props.Info.map(el => <UserMessageBlock key={el.id} name={el.name} url={el.url} lastMessage={el.lastMessage} lastMsgTime={el.lastMsgTime} />);
     return (
-        <div calssName={MessageComponentStyle.MessageComponent}>
+        <div className={MessageComponentStyle.MessageComponent}>
             <div className={MessageComponentStyle.block}>
                 <div className={MessageComponentStyle.search_wrapper}>
                     <img src={require('../All_Icons/Vectorlup.png')}></img>

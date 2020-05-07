@@ -7,7 +7,7 @@ const ADD_POST = 'ADD-POST',
 let initialState = {
     User: {
         Information: [
-            { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU' }
+            { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: 'https://i.pinimg.com/736x/ed/ff/05/edff05cd201e80adb1c6b853557a675c.jpg' }
         ]
     },
     UsersPosted: {
@@ -29,7 +29,7 @@ const CommentInputReducer = (state = initialState, action) => {
             let newPost = {
                 id: 7,
                 Time: myTime(),
-                avatarImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT42KeJzQGhknhvj-M2eplUl_G9AJdvoW45UMBlvRQ1moFrurMp&usqp=CAU',
+                avatarImg: state.User.Information.map(el => [el.avatarImg]),
                 like: 0,
                 message: 0,
                 name: state.User.Information.map(el => [el.name]),

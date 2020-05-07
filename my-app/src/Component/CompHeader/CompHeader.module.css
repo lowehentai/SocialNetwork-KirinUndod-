@@ -94,16 +94,22 @@ input::placeholder {
     cursor: pointer;
 }
 
-.users img {
+.users_avatar {
     width: 35px;
     height: 35px;
+    overflow: hidden;
     cursor: pointer;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    object-fit: cover;
+    /* object-fit: cover; */
+}
+
+.users_avatar img {
+    max-width: 100%;
+    min-height: 100%;
 }
 
 .users_name {

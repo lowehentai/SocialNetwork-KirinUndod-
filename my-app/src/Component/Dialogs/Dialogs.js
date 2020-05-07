@@ -15,7 +15,6 @@ const Dialogs = (props) => {
             let text = textInput.current.value;
             props.updateMessageInput(text);
         };
-
     return (
         <div className={DialogsStyle.Dialogs}>
             <div className={DialogsStyle.block}>

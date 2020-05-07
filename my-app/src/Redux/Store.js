@@ -100,8 +100,7 @@ export const myTime = () => {
     return timeSet;
 }
 export const locationObserver = (element) => {
-    let searchLine = window.location,
-        isTrueClass;
+    let searchLine = window.location;
     if (searchLine.hash === '#log&singIn' || searchLine.hash === '#log&create') {
         element = true;
     } else {

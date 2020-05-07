@@ -42,6 +42,19 @@
 
 .avatarImage {
     cursor: pointer;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.avatarImage img {
+    max-width: 100%;
+    min-height: 100%;
 }
 
 .Icons {

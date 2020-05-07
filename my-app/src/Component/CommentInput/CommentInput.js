@@ -18,7 +18,7 @@ const CommentInput = (props) => {
         <div className={CommentInputStyle.CommentInput}>
             <div className={CommentInputStyle.block}>
                 <div className={CommentInputStyle.avatarImage}>
-                    <img src={require('../All_Icons/Vectoravatar.png')}></img>
+                    <img src={props.avatarImg}></img>
                 </div>
                 {/* method="POST" */}
                 <div>

@@ -5,7 +5,7 @@ import MediaMenuStyle from './MediaMenu.module.css';
 import MediaPuncts from './MediaPuncts/MediaPuncts.js';
 
 const MediaMenu = (props) => {
-    let Mediapuncts = props.Info.map(punct => <MediaPuncts url={punct.url} name={punct.name} image={punct.image} />)
+    let Mediapuncts = props.Info.map(punct => <MediaPuncts key={punct.id} url={punct.url} name={punct.name} image={punct.image} />)
     return (
         <div className={MediaMenuStyle.MediaMenu}>
             <div className={MediaMenuStyle.block}>
