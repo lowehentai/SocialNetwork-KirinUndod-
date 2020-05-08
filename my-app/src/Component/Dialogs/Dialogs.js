@@ -32,7 +32,6 @@ const Dialogs = (props) => {
                             {props.myTime}
                         </div>
                     </div>
-
                     <div className={DialogsStyle.Right}>
                         <div className={DialogsStyle.ContactSettings}>
                             <span></span>

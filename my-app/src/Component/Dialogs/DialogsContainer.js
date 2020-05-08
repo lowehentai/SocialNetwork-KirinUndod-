@@ -8,10 +8,10 @@ import { connect } from 'react-redux';
 import { myTime } from '../../Redux/Store.js';
 
 let mapStateToProps = (state) => {
-    let DialogsElementMap = state.Dialogs.UserMessage.UserDialogs.map(el => <DialogsElement name={el.name} msg={el.msg} image={el.image} lastTime={el.lastTime} />);
+    let DialogsElementMap = state.Dialogs.UserDialogs.map(el => <DialogsElement key={el.id} name={el.name} msg={el.msg} image={el.image} lastTime={el.lastTime} />);
     return {
-        UserMessage: state.Dialogs.UserMessage,
-        UserDialogsInput: state.Dialogs.UserMessage.UserDialogsInput,
+        UserMessage: state.Dialogs,
+        UserDialogsInput: state.Dialogs.UserDialogsInput,
         DialogsElementMap: DialogsElementMap,
         myTime: myTime()
     }

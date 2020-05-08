@@ -7,7 +7,7 @@ const HomeComponent = (props) => {
         <div className={HomeComponentStyle.HomeComponent}>
             <div className={HomeComponentStyle.block}>
                 <div className={HomeComponentStyle.img}>
-                    <img src={props.avatarImg}></img>
+                    <img src={props.avatarImg} alt='IconAvatar'></img>
                 </div>
                 <div className={HomeComponentStyle.button_wrapper}>
                     <button className={HomeComponentStyle.editProfile}>

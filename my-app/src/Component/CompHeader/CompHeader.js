@@ -17,14 +17,14 @@ function CompHeader(props) {
                         <div className={HeaderStyle.logo}>{props.Social.Name}<span className={HeaderStyle.version}>{props.Social.Version}</span></div>
                         <Route path='/'>
                             <div className={HeaderStyle.search}>
-                                <img className={HeaderStyle.img} src={require('../All_Icons/Vectorlup.png')}></img>
+                                <img className={HeaderStyle.img} src={require('../All_Icons/Vectorlup.png')} alt="search"></img>
                                 <form method="POST">
                                     <input type="text" name="search" placeholder="Search"></input>
                                 </form>
                             </div>
                             <div className={HeaderStyle.buttons}>
                                 <button className={HeaderStyle.button}>
-                                    <img src={require('../All_Icons/Vectorbell.png')}></img>
+                                    <img src={require('../All_Icons/Vectorbell.png')} alt="notification"></img>
                                 </button>
                             </div>
                             <div className={HeaderStyle.users}>
@@ -40,7 +40,7 @@ function CompHeader(props) {
                                     </div>
                                 </div>
                                 <div className={HeaderStyle.users_avatar}>
-                                    <img src={myAvatar}></img>
+                                    <img src={myAvatar} alt="IconAvatar"></img>
                                 </div>
                             </div>
                         </Route>

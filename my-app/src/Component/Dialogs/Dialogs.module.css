@@ -180,7 +180,6 @@
 
 /* scroll bar style*/
 .ContentMessages::-webkit-scrollbar-button {
-    background-image: url('');
     background-repeat: no-repeat;
     width: 5px;
     height: 5px;
@@ -220,7 +219,6 @@
 }
 
 .ContentMessages::-webkit-resizer {
-    background-image: url('');
     background-repeat: no-repeat;
     width: 10px;
     height: 0px;

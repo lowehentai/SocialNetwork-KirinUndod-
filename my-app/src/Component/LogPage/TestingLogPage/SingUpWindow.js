@@ -7,7 +7,7 @@ const SingUpWindow = (props) => {
         BlockPuncts = React.createRef(),
         countClick = 0;
     let SelectClick = () => {
-        if (countClick == 0) {
+        if (countClick === 0) {
             arrowLink.current.classList.add(LogPageStyle.active);
             BlockPuncts.current.classList.add(LogPageStyle.activeBlock);
             countClick = 1;

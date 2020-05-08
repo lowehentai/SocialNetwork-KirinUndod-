@@ -7,7 +7,7 @@ const PostUsersInfo = (props) => {
         <div className={PostUsersInfoStyle.PostUsersInfo}>
             <div className={PostUsersInfoStyle.block}>
                 <div className={PostUsersInfoStyle.img}>
-                    <img src={props.avatarImg}></img>
+                    <img src={props.avatarImg} alt="Avatar"></img>
                 </div>
                 <div className={PostUsersInfoStyle.UsersName_block}>
                     {/* Users Name Block Use the DataBase */}
@@ -19,7 +19,7 @@ const PostUsersInfo = (props) => {
                     </span>
                 </div>
                 <button className={PostUsersInfoStyle.btn}>
-                    <img src={require('../../All_Icons/Vectorsettings.png')}></img>
+                    <img src={require('../../All_Icons/Vectorsettings.png')} alt="settings Icon"></img>
                 </button>
             </div>
         </div >

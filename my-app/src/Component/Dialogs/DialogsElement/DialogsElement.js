@@ -8,7 +8,7 @@ const DialogsElement = (props) => {
             <div className={DialogsElementStyle.messageBlock}>
                 <div className={DialogsElementStyle.UsersInfo}>
                     <div className={DialogsElementStyle.ImgNameWrapper}>
-                        <img src={require('../../All_Icons/Vectoravatar.png')} className={DialogsElementStyle.UserImg}></img>
+                        <img src={require('../../All_Icons/Vectoravatar.png')} className={DialogsElementStyle.UserImg} alt="Icon Avatart"></img>
                         <div className={DialogsElementStyle.Name}>{props.name}</div>
                     </div>
                     <div className={DialogsElementStyle.lastMessageTime}>{props.lastTime}</div>
