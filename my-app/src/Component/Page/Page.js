@@ -10,6 +10,7 @@ import MediaMenu from '../MediaMenu/MediaMenu.js';
 import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import DialogsContainer from '../Dialogs/DialogsContainer.js';
+import UsersContainer from '../Users/UsersContainer.js';
 
 const Page = (props) => {
     return (
@@ -33,6 +34,9 @@ const Page = (props) => {
                         <Route path='/lok/message/1'>
                             <DialogsContainer store={props.Info} dispatch={props.dispatch} />
                         </Route>
+                        <Route path='/lok/users'>
+                            <UsersContainer />
+                        </Route>
                     </div>
                     <div className={PageStyle.Right}>
                         <Route path='/lok/main'>
@@ -43,6 +47,9 @@ const Page = (props) => {
                         </Route>
                         <Route path='/lok/message'>
                             <MessageTypeBlock Info={props.Info.PropsInfo.MessageType.Puncts} />
+                        </Route>
+                        <Route path='/lok/users'>
+                            <MessageTypeBlock Info={props.Info.PropsInfo.UsersType.Puncts} />
                         </Route>
                     </div>
                 </div>

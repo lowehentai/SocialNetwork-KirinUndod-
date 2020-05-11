@@ -18,9 +18,9 @@ function CompHeader(props) {
                         <Route path='/'>
                             <div className={HeaderStyle.search}>
                                 <img className={HeaderStyle.img} src={require('../All_Icons/Vectorlup.png')} alt="search"></img>
-                                <form method="POST">
+                                <div className={HeaderStyle.InputWrapper}>
                                     <input type="text" name="search" placeholder="Search"></input>
-                                </form>
+                                </div>
                             </div>
                             <div className={HeaderStyle.buttons}>
                                 <button className={HeaderStyle.button}>

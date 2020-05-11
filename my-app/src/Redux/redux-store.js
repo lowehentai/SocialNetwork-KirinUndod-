@@ -3,11 +3,13 @@ import { combineReducers, createStore } from 'redux';
 import CommentInputReducer from './CommentInput-reducer.js';
 import DialogsReducer from './Dialog-reducer.js';
 import PropsReducer from './Props-reducer.js';
+import UsersReducer from './Users-reducer.js';
 
 let reducers = combineReducers({
     CommentInput: CommentInputReducer,
     Dialogs: DialogsReducer,
-    PropsInfo: PropsReducer
+    PropsInfo: PropsReducer,
+    Users: UsersReducer
 });
 
 
