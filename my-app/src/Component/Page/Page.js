@@ -12,52 +12,53 @@ import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import DialogsContainer from '../Dialogs/DialogsContainer.js';
 import UsersContainer from '../Users/UsersContainer.js';
 
-const Page = (props) => {
-    return (
-        <Router>
-            <div className={PageStyle.Page}>
-                <div className={PageStyle.container}>
-                    <div className={PageStyle.Left}>
-                        <QuickAccess Info={props.Info.PropsInfo.QuickAccess.Puncts} />
-                    </div>
-                    <div className={PageStyle.Center}>
-                        <Route path='/lok/main'>
-                            <CommentInputContainer store={props.Info} dispatch={props.dispatch} />
-                            {props.ContentMap}
-                        </Route>
-                        <Route path='/lok/home'>
-                            {props.HomeComponentMap}
-                        </Route>
-                        <Route exact path='/lok/message'>
-                            <MessageComponent Info={props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
-                        </Route>
-                        <Route path='/lok/message/1'>
-                            <DialogsContainer store={props.Info} dispatch={props.dispatch} />
-                        </Route>
-                        <Route path='/lok/users'>
-                            <UsersContainer />
-                        </Route>
-                    </div>
-                    <div className={PageStyle.Right}>
-                        <Route path='/lok/main'>
-                            <MediaMenu Info={props.Info.PropsInfo.MediaMenu.Puncts} />
-                        </Route>
-                        <Route path='/lok/home'>
-                            {props.HomeUsersComponentMap}
-                        </Route>
-                        <Route path='/lok/message'>
-                            <MessageTypeBlock Info={props.Info.PropsInfo.MessageType.Puncts} />
-                        </Route>
-                        <Route path='/lok/users'>
-                            <MessageTypeBlock Info={props.Info.PropsInfo.UsersType.Puncts} />
-                        </Route>
+class Page extends React.Component {
+    render() {
+        return (
+            <Router>
+                <div className={PageStyle.Page}>
+                    <div className={PageStyle.container}>
+                        <div className={PageStyle.Left}>
+                            <QuickAccess Info={this.props.Info.PropsInfo.QuickAccess.Puncts} />
+                        </div>
+                        <div className={PageStyle.Center}>
+                            <Route path='/lok/main'>
+                                <CommentInputContainer store={this.props.Info} dispatch={this.props.dispatch} />
+                                {this.props.ContentMap}
+                            </Route>
+                            <Route path='/lok/home'>
+                                {this.props.HomeComponentMap}
+                            </Route>
+                            <Route exact path='/lok/message'>
+                                <MessageComponent Info={this.props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
+                            </Route>
+                            <Route path='/lok/message/1'>
+                                <DialogsContainer store={this.props.Info} dispatch={this.props.dispatch} />
+                            </Route>
+                            <Route path='/lok/users'>
+                                <UsersContainer />
+                            </Route>
+                        </div>
+                        <div className={PageStyle.Right}>
+                            <Route path='/lok/main'>
+                                <MediaMenu Info={this.props.Info.PropsInfo.MediaMenu.Puncts} />
+                            </Route>
+                            <Route path='/lok/home'>
+                                {this.props.HomeUsersComponentMap}
+                            </Route>
+                            <Route path='/lok/message'>
+                                <MessageTypeBlock Info={this.props.Info.PropsInfo.MessageType.Puncts} />
+                            </Route>
+                            <Route path='/lok/users'>
+                                <MessageTypeBlock Info={this.props.Info.PropsInfo.UsersType.Puncts} />
+                            </Route>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
-
 
 export default Page;
 

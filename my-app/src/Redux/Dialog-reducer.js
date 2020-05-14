@@ -1,11 +1,12 @@
 import { myTime } from './Store.js';
+import avatarImg from '../assest/images/2.jpg';
 
 const SEND_MESSAGE = 'SEND-MESSAGE',
     UPDATE_MESSAGE_INPUT = 'UPDATE_MESSAGE_INPUT';
 
 let initialState = {
     Information: [
-        { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: 'https://i.pinimg.com/736x/ed/ff/05/edff05cd201e80adb1c6b853557a675c.jpg' }
+        { id: 1, name: 'Hentai Hentaiovic', status: 'Developer', extraStatus: 'Tester', avatarImg: avatarImg }
     ],
     UserDialogs: [
         { id: 1, msg: 'Hello !', image: 'NoN', name: 'Hentai', lastTime: '12:00' }

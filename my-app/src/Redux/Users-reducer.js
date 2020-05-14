@@ -38,9 +38,6 @@ const UsersReducer = (state = initialState, action) => {
     }
 }
 
-
-
-
 export default UsersReducer;
 
 export const followAC = (userId) => ({ type: FOLLOW, userId });

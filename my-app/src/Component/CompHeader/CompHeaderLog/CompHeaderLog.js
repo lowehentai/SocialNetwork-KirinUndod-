@@ -4,26 +4,34 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //Style Import -- Import Log.module.css
 import CompHeaderLogStyle from './CompHeaderLog.module.css';
 
-function CompHeaderLog(props) {
-
-    let searchLine = window.location,
-        isBackground;
-    if (searchLine.hash === '#i' || searchLine.hash === '#u') {
-        isBackground = true;
-    } else {
-        isBackground = false;
+class CompHeaderLog extends React.Component {
+    constructor(props) {
+        super(props);
+        this.searchLine = window.location;
+        this.isBackground = this.isBackground;
+        if (this.searchLine.href === 'http://localhost:3000/') {
+            window.location = 'http://localhost:3000/login';
+        } if (this.searchLine.hash === '#Up' || this.searchLine.href === 'http://localhost:3000/login') {
+            this.isBackground = true;
+        } else {
+            this.isBackground = false;
+        }
     }
-    return (
-        <Router>
-            <div style={{ backgroundColor: isBackground ? '#000000a2' : '#404040' }} className={CompHeaderLogStyle.Header}>
-                <div className={CompHeaderLogStyle.container}>
-                    <div className={CompHeaderLogStyle.wrapper}>
-                        <div className={CompHeaderLogStyle.logo}>{props.Social.Name}<span className={CompHeaderLogStyle.version}>{props.Social.Version}</span></div>
+    render() {
+        return (
+            <Router>
+                <div style={{ backgroundColor: this.isBackground ? '#000000a2' : '#404040' }} className={CompHeaderLogStyle.Header}>
+                    <div className={CompHeaderLogStyle.container}>
+                        <div className={CompHeaderLogStyle.wrapper}>
+                            <div className={CompHeaderLogStyle.logo}>{this.props.Social.Name}
+                                <a href="/lok/main" className={CompHeaderLogStyle.version}>{this.props.Social.Version}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
 
 export default CompHeaderLog;
