@@ -10,6 +10,17 @@ import CompHeaderLog from './Component/CompHeader/CompHeaderLog/CompHeaderLog.js
 import LogPage from './Component/Authorization/LogPage/LogPage.js';
 
 class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.searchLine = window.location;
+		if (this.searchLine.href === 'https://analytics.kirinundod.com/') {
+			window.location = 'https://analytics.kirinundod.com/login';
+		} if (this.searchLine.href === 'http://localhost:3000/') {
+			window.location = 'http://localhost:3000/login';
+		} if (this.searchLine.href === 'http://192.168.1.104:3000/') {
+			window.location = 'http://192.168.1.104:3000/login';
+		}
+	}
 	render() {
 		return (
 			<Router>

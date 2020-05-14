@@ -9,9 +9,7 @@ class CompHeaderLog extends React.Component {
         super(props);
         this.searchLine = window.location;
         this.isBackground = this.isBackground;
-        if (this.searchLine.href === 'https://analytics.kirinundod.com/') {
-            window.location = 'https://analytics.kirinundod.com/login';
-        } if (this.searchLine.hash === '#Up' || this.searchLine.href === 'https://analytics.kirinundod.com/login') {
+        if (this.searchLine.hash === '#Up' || this.searchLine.href === 'https://analytics.kirinundod.com/login' || this.searchLine.href === 'http://localhost:3000/login' || this.searchLine.href === 'http://192.168.1.104:3000/login') {
             this.isBackground = true;
         } else {
             this.isBackground = false;

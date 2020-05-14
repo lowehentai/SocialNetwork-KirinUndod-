@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 //Style Import
 import LogPageStyle from './LogPage.module.css';
 
-class SingInWindow extends React.Component {
+class SignInWindow extends React.Component {
     arrowLink = React.createRef();
     BlockPuncts = React.createRef();
     countClick = 0;
@@ -25,14 +25,14 @@ class SingInWindow extends React.Component {
                 <div className={LogPageStyle.SelectLog}>
                     <div onClick={this.SelectClick} className={LogPageStyle.SelectLog_wrapper}>
                         <div className={LogPageStyle.Selected}>
-                            Sing In
+                            Sign In
                             </div>
                         <button ref={this.arrowLink} className={LogPageStyle.SelectButton}>
                             <img className={LogPageStyle.ArrowLeft} src={require('../../All_Icons/ArrowsLeft.png')} />
                         </button>
                         <div ref={this.BlockPuncts} className={LogPageStyle.SelectPunctBlock}>
-                            <NavLink to='/login/sing#Up'>
-                                Sing Up
+                            <NavLink to='/login/sign#Up'>
+                                Sign Up
                             </NavLink>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ class SingInWindow extends React.Component {
                         <span></span>
                     </div>
                     <NavLink to='/login' className={LogPageStyle.NavLink}>
-                        <input type="submit" value="Sing In" className={LogPageStyle.InputButton} />
+                        <input type="submit" value="Sign In" className={LogPageStyle.InputButton} />
                     </NavLink>
                 </form>
             </div>
@@ -57,4 +57,4 @@ class SingInWindow extends React.Component {
     }
 }
 
-export default SingInWindow;
+export default SignInWindow;
