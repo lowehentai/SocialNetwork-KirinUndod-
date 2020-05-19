@@ -5,9 +5,8 @@ import UsersStyle from './Users.module.css';
 import userPhoto from '../../assest/images/1.jpg';
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
-        if (this.props.users.Users.length === 0) {
+    componentDidMount() {
+        for (let x = 0; x <= 1; x++) {
             axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {//not my server :(
                 this.props.setUsers(response.data.items);
             });
@@ -40,5 +39,3 @@ class Users extends React.Component {
 }
 
 export default Users;
-
-
