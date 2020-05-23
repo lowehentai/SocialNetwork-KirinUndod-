@@ -1,4 +1,5 @@
 .Users {
+    position: relative;
     width: 660px;
     min-height: 80px;
     max-height: 120px;
@@ -13,6 +14,8 @@
     align-items: center;
     box-shadow: 0px 0px 10px #00000090;
     padding: 10px 0px;
+    animation: slowShow 1s ease 0s 1;
+    -webkit-animation: slowShow 1s ease 0s 1;
 }
 
 .UsersImg {
@@ -80,4 +83,125 @@
 .Button:hover {
     cursor: pointer;
     background-color: #9b9b9b;
+}
+
+.NumberButton {
+    max-width: 660px;
+    padding: 0px 10px;
+    height: 40px;
+    background-color: #404040;
+    text-align: center;
+    margin: 0px auto 10px auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    color: #ffffff85;
+    box-shadow: 0px 0px 10px #00000090;
+    z-index: 2;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.NumberButton span {
+    display: inline-block;
+    width: 50px;
+    cursor: pointer;
+    line-height: 30px;
+    transition: 1s all;
+    -webkit-transition: 1s all;
+    -moz-transition: 1s all;
+    -ms-transition: 1s all;
+    -o-transition: 1s all;
+}
+
+.SelectedButton {
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #ffffff, 0px 3px 5px #000000;
+    transition: 2s all;
+    -webkit-transition: 2s all;
+    -moz-transition: 2s all;
+    -ms-transition: 2s all;
+    -o-transition: 2s all;
+    animation: slowShow 1.5s ease 0s 1;
+    -webkit-animation: slowShow 1.5s ease 0s 1;
+}
+
+.SelectedButton::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    box-shadow: 0px 15px 15px #ffffff, 0px 0px 10px #ffffff;
+}
+
+@keyframes slowShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.NumberButton::-webkit-scrollbar-button {
+    background-repeat: no-repeat;
+    display: none;
+	width: 5px;
+	height: 2px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+}
+
+.NumberButton::-webkit-scrollbar-track {
+	background-color: #2f2f2f;
+    opacity: 1;
+    height: 2px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	-ms-border-radius: 30px;
+	-o-border-radius: 30px;
+}
+
+.NumberButton::-webkit-scrollbar-thumb {
+    background-color: #646464;
+    height: 2px;
+    transition: 0.2s all;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+.NumberButton::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}
+
+.NumberButton::-webkit-resizer {
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 0px;
+}
+
+.NumberButton::-webkit-scrollbar {
+    height: 3px;
+    display: block;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
