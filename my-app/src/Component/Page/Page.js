@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PageStyle from './Page.module.css';
 //Commonent Import
 import QuickAccess from '../QuickAccess/QuickAccess.js';
-import CommentInputContainer from '../CommentInput/CommentInputContainer.js';
+import CommentInputContainer from '../CommentInput/CommentInputContainer.jsx';
 import MediaMenu from '../MediaMenu/MediaMenu.js';
 import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
-import DialogsContainer from '../Dialogs/DialogsContainer.js';
-import UsersContainer from '../Users/UsersContainer.js';
+import DialogsContainer from '../Dialogs/DialogsContainer.jsx';
+import UsersContainer from '../Users/UsersContainer.jsx';
 
 class Page extends React.Component {
     render() {

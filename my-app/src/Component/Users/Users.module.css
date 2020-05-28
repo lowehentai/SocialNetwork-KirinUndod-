@@ -86,7 +86,7 @@
 }
 
 .NumberButton {
-    max-width: 660px;
+    width: 660px;
     padding: 0px 10px;
     height: 40px;
     background-color: #404040;
@@ -151,24 +151,24 @@
 .NumberButton::-webkit-scrollbar-button {
     background-repeat: no-repeat;
     display: none;
-	width: 5px;
-	height: 2px;
-	border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	-ms-border-radius: 30px;
-	-o-border-radius: 30px;
+    width: 5px;
+    height: 2px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .NumberButton::-webkit-scrollbar-track {
-	background-color: #2f2f2f;
+    background-color: #2f2f2f;
     opacity: 1;
     height: 2px;
-	border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	-ms-border-radius: 30px;
-	-o-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .NumberButton::-webkit-scrollbar-thumb {
@@ -191,9 +191,9 @@
 }
 
 .NumberButton::-webkit-resizer {
-	background-repeat: no-repeat;
-	width: 10px;
-	height: 0px;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 0px;
 }
 
 .NumberButton::-webkit-scrollbar {
