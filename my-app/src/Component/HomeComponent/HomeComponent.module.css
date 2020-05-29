@@ -42,13 +42,18 @@
 .editProfile {
     width: 150px;
     height: 30px;
+    cursor: pointer;
+    outline: none;
 }
 
 .settings {
+    cursor: pointer;
     width: 35px;
     height: 30px;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
+    outline: none;
 }
 
 .span {

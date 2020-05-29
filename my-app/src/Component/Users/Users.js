@@ -1,15 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 //Style Import 
 import UsersStyle from './Users.module.css';
 import userPhoto from '../../assest/images/1.jpg';
 
 let Users = (props) => {
+    debugger;
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize),
         pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-
     return (
         <div>
             <div className={UsersStyle.NumberButton}>
@@ -23,9 +24,11 @@ let Users = (props) => {
                 props.users.Users.map(el =>
                     <div key={el.id}>
                         <div className={UsersStyle.Users}>
-                            <div className={UsersStyle.UsersImg}>
-                                <img src={el.photos.small != null ? el.photos.small : userPhoto} />
-                            </div>
+                            <NavLink to={'/lok/home/' + el.id }className={UsersStyle.UsersHomeRouterUrl}>
+                                <div className={UsersStyle.UsersImg}>
+                                    <img src={el.photos.small != null ? el.photos.small : userPhoto} />
+                                </div>
+                            </NavLink>
                             <div className={UsersStyle.UsersInfo}>
                                 <div className={UsersStyle.UsersName}>
                                     {el.name}

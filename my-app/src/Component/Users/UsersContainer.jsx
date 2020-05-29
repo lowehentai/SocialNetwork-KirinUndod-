@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import { follow, unfollow, setUsers, setUsersCurrent, setUsersTotalCount, toggleIsFetching } from '../../Redux/Users-reducer.js';
 import Users from './Users.js';
 import Preloader from '../Common/Preloader/Preloader.js';
-
 class UsersContainer extends React.Component {
-
     componentDidMount() {
-        this.props.toggleIsFetching(true);
         if (this.props.users.Users.length === 0) {
+            this.props.toggleIsFetching(true);
             axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
                 this.props.toggleIsFetching(false);
                 this.props.setUsers(response.data.items);
@@ -17,7 +15,6 @@ class UsersContainer extends React.Component {
             });
         }
     }
-
     onPageChanged = (pageNumber) => {
         this.props.toggleIsFetching(true);
         this.props.setUsersCurrent(pageNumber);//Query String Parameters

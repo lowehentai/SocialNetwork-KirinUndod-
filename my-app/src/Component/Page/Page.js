@@ -23,7 +23,7 @@ class Page extends React.Component {
                         </div>
                         <div className={PageStyle.Center}>
                             <Route path='/lok/main'>
-                                <CommentInputContainer store={this.props.Info} dispatch={this.props.dispatch} />
+                                <CommentInputContainer />
                                 {this.props.ContentMap}
                             </Route>
                             <Route path='/lok/home'>
@@ -45,6 +45,8 @@ class Page extends React.Component {
                             </Route>
                             <Route path='/lok/home'>
                                 {this.props.HomeUsersComponentMap}
+                                <CommentInputContainer />
+                                {this.props.MyPost}
                             </Route>
                             <Route path='/lok/message'>
                                 <MessageTypeBlock Info={this.props.Info.PropsInfo.MessageType.Puncts} />

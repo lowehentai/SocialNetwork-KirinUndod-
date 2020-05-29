@@ -1,4 +1,7 @@
 .Preloader {
+    position: fixed;
+    bottom: 5%;
+    left: 3%;
     color: #ffffff;
     font-size: 24px;
     letter-spacing: 2px;
@@ -46,6 +49,7 @@
     -o-transform: rotate(60deg);
     bottom: 2%;
 }
+
 .t2 {
     transform-origin: 0%;
     transform: rotate(-60deg);
@@ -55,6 +59,7 @@
     -o-transform: rotate(-60deg);
     bottom: 2%;
 }
+
 .t3 {
     bottom: 2%;
 }

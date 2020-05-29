@@ -43,10 +43,16 @@
 
 .UsersName {
     font-size: 20px;
+    cursor: pointer;
+}
+
+.UsersName:hover {
+    color: #a8a5a5;
 }
 
 .UsersStatus {
     max-width: 450px;
+    min-height: 25px;
     font-size: 14px;
     color: #888888;
     word-wrap: break-word;

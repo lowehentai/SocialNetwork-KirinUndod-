@@ -5,6 +5,7 @@ import CommentInputStyle from './CommentInput.module.css';
 class CommentInput extends React.Component {
     newPostElement = React.createRef();
     mediaPostElement = React.createRef();
+
     onAdPost = () => {
         let text = this.newPostElement.current.value;
         this.props.addPost(text);
@@ -20,7 +21,6 @@ class CommentInput extends React.Component {
                     <div className={CommentInputStyle.avatarImage}>
                         <img src={this.props.avatarImg}></img>
                     </div>
-                    {/* method="POST" */}
                     <div>
                         <div className={CommentInputStyle.form}>
                             <input onChange={this.onPostChange} value={this.props.Info} ref={this.newPostElement} type="text" maxLength="450" placeholder="What's New?" className={CommentInputStyle.input}></input>
