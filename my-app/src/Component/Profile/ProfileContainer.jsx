@@ -1,20 +1,30 @@
 import React from 'react';
+import * as axios from 'axios';
 import { connect } from 'react-redux';
+import { setUserProfile } from '../../Redux/Profile-reducer.js'
 import Profile from './Profile.js';
-import Content from '../Content/Content.js';
+class ProfileContainer extends React.Component {
 
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
+            this.props.setUserProfile(response.data);
+        });
+    }
 
-let MyStateToProps = (state) => {
-    let HomeComponentMap = state.CommentInput.Information,
-        HomeUsersComponentMap = state.CommentInput.Information,
-        MyPost = state.CommentInput.MyPosts.map(el => <Content key={el.id} name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse();
-    return {
-        HomeComponentMap: HomeComponentMap,
-        HomeUsersComponentMap: HomeUsersComponentMap,
-        MyPost: MyPost
+    render() {
+        return <>
+            <Profile {...this.props} Profile={this.props.Profile} MyPosts={this.props.MyPosts}/>
+        </>
     }
 }
 
-const PageContainer = connect(MyStateToProps)(Profile);
+let mapStateToProps = (state) => ({
+    Profile: state.Profile.profile,
+    MyPosts: state.CommentInput.MyPosts
+});
 
-export default PageContainer;
+let mapDispatchToProps = {
+    setUserProfile
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);

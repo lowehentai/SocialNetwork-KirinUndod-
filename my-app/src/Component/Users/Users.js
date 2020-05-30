@@ -5,7 +5,6 @@ import UsersStyle from './Users.module.css';
 import userPhoto from '../../assest/images/1.jpg';
 
 let Users = (props) => {
-    debugger;
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize),
         pages = [];
     for (let i = 1; i <= pagesCount; i++) {

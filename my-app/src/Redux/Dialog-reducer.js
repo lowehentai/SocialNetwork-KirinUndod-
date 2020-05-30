@@ -1,4 +1,3 @@
-import { myTime } from './Store.js';
 import avatarImg from '../assest/images/2.jpg';
 
 const SEND_MESSAGE = 'SEND-MESSAGE',
@@ -17,6 +16,21 @@ let initialState = {
     ],
     UserDialogsInput: ''
 };
+
+const myTime = () => {
+    let dat = new Date(),
+        myHours = dat.getHours(),
+        myMinutes = dat.getMinutes(),
+        timeSet;
+    if (myHours <= 9) {
+        myHours = '0' + myHours;
+    } if (myMinutes <= 9) {
+        myMinutes = '0' + myMinutes;
+    }
+    timeSet = myHours + ':' + myMinutes;
+    return timeSet;
+}
+
 
 const DialogsReducer = (state = initialState, action) => {
     switch (action.type) {

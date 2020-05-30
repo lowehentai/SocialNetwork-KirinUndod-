@@ -16,9 +16,14 @@
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
-.input {
+.StatusInput {
+    color: rgb(182, 182, 182);
+    text-transform: capitalize;
+}
+/* .input {
     width: 100%;
     resize: none;
     border: none;
@@ -54,4 +59,4 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-}
+} */

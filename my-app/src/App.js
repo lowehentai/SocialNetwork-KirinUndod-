@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import appStyle from './App.module.css';
 //Component Import
 import CompHeader from './Component/CompHeader/CompHeader.js';
-import PageContainer from './Component/Page/PageContainer.js';
+import PageContainer from './Component/Page/PageContainer.jsx';
 import CompHeaderLog from './Component/CompHeader/CompHeaderLog/CompHeaderLog.js';
 import LogPage from './Component/Authorization/LogPage/LogPage.js';
 
