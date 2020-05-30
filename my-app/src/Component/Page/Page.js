@@ -11,6 +11,7 @@ import MessageComponent from '../MessageComponent/MessageComponent';
 import MessageTypeBlock from '../MessageTypeBlock/MessageTypeBlock.js';
 import DialogsContainer from '../Dialogs/DialogsContainer.jsx';
 import UsersContainer from '../Users/UsersContainer.jsx';
+import ProfileContainer from '../Profile/ProfileContainer.jsx';
 
 class Page extends React.Component {
     render() {
@@ -18,16 +19,19 @@ class Page extends React.Component {
             <Router>
                 <div className={PageStyle.Page}>
                     <div className={PageStyle.container}>
+
+                        {/* Left Block */}
+
                         <div className={PageStyle.Left}>
                             <QuickAccess Info={this.props.Info.PropsInfo.QuickAccess.Puncts} />
                         </div>
+
+                        {/* Center Block */}
+
                         <div className={PageStyle.Center}>
                             <Route path='/lok/main'>
                                 <CommentInputContainer />
                                 {this.props.ContentMap}
-                            </Route>
-                            <Route path='/lok/home'>
-                                {this.props.HomeComponentMap}
                             </Route>
                             <Route exact path='/lok/message'>
                                 <MessageComponent Info={this.props.Info.PropsInfo.MessagesBlock.UserDialogBlock} />
@@ -39,13 +43,15 @@ class Page extends React.Component {
                                 <UsersContainer />
                             </Route>
                         </div>
+
+                        {/* Right Block */}
+
                         <div className={PageStyle.Right}>
                             <Route path='/lok/main'>
                                 <MediaMenu Info={this.props.Info.PropsInfo.MediaMenu.Puncts} />
                             </Route>
                             <Route path='/lok/home'>
-                                {this.props.HomeUsersComponentMap}
-                                <CommentInputContainer />
+                                <ProfileContainer />
                                 {this.props.MyPost}
                             </Route>
                             <Route path='/lok/message'>

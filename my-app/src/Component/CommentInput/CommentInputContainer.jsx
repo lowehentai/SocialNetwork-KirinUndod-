@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 let mapStateToProps = (state) => {
     return {
         Info: state.CommentInput.PostInput,
-        avatarImg: state.CommentInput.Information.map(el => [el.avatarImg]),
+        avatarImg: state.CommentInput.Information.map(el => [el.avatarImg])
     }
 }
 

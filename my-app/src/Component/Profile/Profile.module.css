@@ -1,0 +1,10 @@
+.container {
+    width: 947px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Right {
+    display: flex;
+    flex-direction: column;
+}

@@ -3,20 +3,12 @@ import { connect } from 'react-redux';
 //Commonent Import
 import Page from './Page.js';
 import Content from '../Content/Content.js';
-import HomeComponent from '../HomeComponent/HomeComponent.js';
-import HomeUsersComponent from '../HomeUsersComponent/HomeUsersComponent.js';
 
 
 let MyStateToProps = (state) => {
-    let ContentMap = state.CommentInput.UserPosted.map(el => <Content key={el.id} name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse(),
-        HomeComponentMap = state.CommentInput.Information.map(el => <HomeComponent key={el.id} avatarImg={el.avatarImg} />),
-        HomeUsersComponentMap = state.CommentInput.Information.map(el => <HomeUsersComponent key={el.id} name={el.name} />),
-        MyPost = state.CommentInput.MyPosts.map(el => <Content key={el.id} name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse();
+    let ContentMap = state.CommentInput.UserPosted.map(el => <Content key={el.id} name={el.name} descr={el.descr} image={el.image} like={el.like} message={el.message} Time={el.Time} avatarImg={el.avatarImg} />).reverse();
     return {
         ContentMap: ContentMap,
-        HomeComponentMap: HomeComponentMap,
-        HomeUsersComponentMap: HomeUsersComponentMap,
-        MyPost: MyPost,
         Info: state
     }
 }
