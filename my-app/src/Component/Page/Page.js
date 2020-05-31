@@ -50,7 +50,7 @@ class Page extends React.Component {
                             <Route path='/lok/main'>
                                 <MediaMenu Info={this.props.Info.PropsInfo.MediaMenu.Puncts} />
                             </Route>
-                            <Route path='/lok/home'>
+                            <Route path='/lok/home/:userId?'>
                                 <ProfileContainer />
                                 {this.props.MyPost}
                             </Route>
