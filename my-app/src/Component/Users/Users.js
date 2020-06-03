@@ -23,17 +23,17 @@ let Users = (props) => {
                 props.users.Users.map(el =>
                     <div key={el.id}>
                         <div className={UsersStyle.Users}>
-                            <NavLink to={'/lok/home/' + el.id }className={UsersStyle.UsersHomeRouterUrl}>
+                            <NavLink to={'/lok/home/' + el.id} className={UsersStyle.UsersHomeRouterUrl}>
                                 <div className={UsersStyle.UsersImg}>
                                     <img src={el.photos.small != null ? el.photos.small : NoPhoto} />
                                 </div>
-                            </NavLink>
-                            <div className={UsersStyle.UsersInfo}>
-                                <div className={UsersStyle.UsersName}>
-                                    {el.name}
+                                <div className={UsersStyle.UsersInfo}>
+                                    <div className={UsersStyle.UsersName}>
+                                        {el.name}
+                                    </div>
+                                    <div className={UsersStyle.UsersStatus}>{el.status != null ? el.status : ''}</div>
                                 </div>
-                                <div className={UsersStyle.UsersStatus}>{el.status != null ? el.status : ''}</div>
-                            </div>
+                            </NavLink>
                             <div className={UsersStyle.UsersButton}>
                                 {el.followed
                                     ? <button onClick={() => { props.unfollow(el.id) }} className={`${UsersStyle.Button} ${UsersStyle.UnFollow}`}>Un Follow</button>

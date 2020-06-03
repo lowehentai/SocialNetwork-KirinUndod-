@@ -1,4 +1,4 @@
-.Users {
+/* .Users {
     position: relative;
     width: 660px;
     min-height: 80px;
@@ -16,7 +16,7 @@
     padding: 10px 0px;
     animation: slowShow 1s ease 0s 1;
     -webkit-animation: slowShow 1s ease 0s 1;
-}
+} */
 
 .UsersImg {
     width: 55px;
@@ -144,6 +144,15 @@
     box-shadow: 0px 15px 15px #ffffff, 0px 0px 10px #ffffff;
 }
 
+.UsersHomeRouterUrl {
+    text-decoration: none;
+    width: 85%;
+    min-height: 80px;
+    max-height: 120px;
+    display: flex;
+    align-items: center;
+}
+
 @keyframes slowShow {
     0% {
         opacity: 0;
@@ -216,4 +225,14 @@
     display: block;
     margin: 0 auto;
     width: 200px;
+}
+
+/* TESTINGS */
+
+.Users {
+    color: white;
+    height: 400px;
+    background-color: #404040;
+    width: 660px;
+    padding-left: 40px;
 }

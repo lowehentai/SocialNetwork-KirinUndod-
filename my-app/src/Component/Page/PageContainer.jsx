@@ -16,4 +16,3 @@ let mapStateToProps = (state) => {
 const PageContainer = connect(mapStateToProps)(Page);
 
 export default PageContainer;
-
